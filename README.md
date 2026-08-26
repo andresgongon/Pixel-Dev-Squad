@@ -12,8 +12,7 @@ Repositorio - Programación para Videojuegos UNAD - Grupo 213027_3
 
 **Ubicación:** Colombia
 
-**Perfil:** Estudiante interesado en el desarrollo de videojuegos,
-modelado 3D y creación de personajes y escenarios.
+**Perfil:** Estudiante de septimo semestre de la UNAD, mi deseo es poder crear contenido gaming basado en la cultura colombiana, actualmente soy tecnico en mantenimiento e computadores en la UMNG y mi pasion son los animes como se supondra tambien los video juegos
 
 ### Plato favorito
 
