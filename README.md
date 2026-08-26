@@ -4,7 +4,7 @@ Repositorio - Programación para Videojuegos UNAD - Grupo 213027_3
 
 ## Eric Molina
 
-![Foto personal](Eric/)
+![Foto personal](Eric/EricMolina.jpg)
 
 **Nombre:** Eric
 
