@@ -8,6 +8,9 @@ Repositorio - Programación para Videojuegos UNAD - Grupo 213027_3
 
 ![Foto personal](german/perfil.jpg)
 
+### Comida favorita
+![Mi comida favorita](german/comida-favorita.png)
+
 
 **Nombre Estudiante:** Eric Daniel Molina
 
