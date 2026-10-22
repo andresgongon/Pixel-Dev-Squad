@@ -96,60 +96,88 @@ namespace RioLimpio
             wasteCatalog = new List<WasteItemData>
             {
                 new WasteItemData(
-                    "pet_bottle",
-                    "Botella Plástica PET (Limpia)",
+                    "botella_pet",
+                    "Botella Plástica PET",
                     BinCategory.BlueRecyclable,
                     false,
-                    "¡Pista! Las botellas plásticas limpias y secas van en la caneca AZUL [1] de aprovechables."
+                    "¡Pista! Las botellas plásticas limpias y vacías son aprovechables: van en la caneca AZUL [1]."
                 ),
                 new WasteItemData(
-                    "banana_peel",
+                    "cascara_banano",
                     "Cáscara de Banano",
                     BinCategory.GreenOrganic,
                     false,
-                    "¡Pista! Los restos de fruta y cáscaras son biodegradables y van en la caneca VERDE [3]."
+                    "¡Pista! Las cáscaras de fruta son residuos orgánicos biodegradables: van en la caneca VERDE [3]."
                 ),
                 new WasteItemData(
-                    "greasy_pizza",
-                    "Caja de Pizza Engrasada (Trampa)",
+                    "paquete_engrase",
+                    "Empaque Engrasado (Trampa)",
                     BinCategory.GreyNonRecyclable,
                     true,
-                    "¡Cuidado! Aunque es cartón, tiene grasa de comida y NO se puede reciclar. Va en la GRIS [4]."
+                    "¡Cuidado! Este empaque tiene manchas de grasa y comida, por eso NO es reciclable: va en la GRIS [4]."
                 ),
                 new WasteItemData(
-                    "used_battery",
-                    "Pila Alcalina Usada",
+                    "computador_raee",
+                    "Computador Dañado (RAEE)",
                     BinCategory.RedSpecial,
                     false,
-                    "¡Pista! Las pilas contienen metales pesados y requieren manejo especial en la caneca ROJA [2]."
+                    "¡Pista! Los aparatos electrónicos dañados (RAEE) requieren manejo especial en la caneca ROJA [2]."
                 ),
                 new WasteItemData(
-                    "clean_cardboard",
+                    "caja_carton",
                     "Caja de Cartón Limpia",
                     BinCategory.BlueRecyclable,
                     false,
-                    "¡Pista! El cartón limpio y sin manchas de grasa es aprovechable y va en la caneca AZUL [1]."
+                    "¡Pista! El cartón limpio, seco y sin restos de grasa es 100% reciclable: va en la caneca AZUL [1]."
                 ),
                 new WasteItemData(
-                    "apple_core",
+                    "restos_manzana",
                     "Restos de Manzana",
                     BinCategory.GreenOrganic,
                     false,
-                    "¡Pista! Los restos de manzana sirven para abono orgánico en la caneca VERDE [3]."
+                    "¡Pista! Los corazones y restos de manzana sirven para compostaje en la caneca VERDE [3]."
                 ),
                 new WasteItemData(
-                    "chip_bag",
-                    "Empaque Metalizado de Papas (Trampa)",
+                    "servilleta_usada",
+                    "Servilleta Usada (Trampa)",
                     BinCategory.GreyNonRecyclable,
                     true,
-                    "¡Ojo! Los paquetes de mecato con interior metalizado y restos de sal van en la caneca GRIS [4]."
+                    "¡Ojo! Aunque viene del papel, la servilleta sucia o engrasada pierde su reciclabilidad: va en la GRIS [4]."
                 ),
                 new WasteItemData(
-                    "glass_jar",
-                    "Frasco de Vidrio Limpio",
+                    "llanta_usada",
+                    "Llanta Usada Posconsumo",
+                    BinCategory.RedSpecial,
+                    false,
+                    "¡Pista! Las llantas son residuos especiales posconsumo y no van en la basura común: caneca ROJA [2]."
+                ),
+                new WasteItemData(
+                    "lata_aluminio",
+                    "Lata de Aluminio",
                     BinCategory.BlueRecyclable,
                     false,
-                    "¡Pista! Los envases de vidrio enjuagados son 100% reciclables en la caneca AZUL [1]."
+                    "¡Pista! Las latas de aluminio limpias se funden y aprovechan de nuevo: van en la caneca AZUL [1]."
+                ),
+                new WasteItemData(
+                    "cascara_naranja",
+                    "Cáscara de Naranja",
+                    BinCategory.GreenOrganic,
+                    false,
+                    "¡Pista! Los restos cítricos y cáscaras naturales son orgánicos: van en la caneca VERDE [3]."
+                ),
+                new WasteItemData(
+                    "papel_limpio",
+                    "Papel Limpio Arrugado",
+                    BinCategory.BlueRecyclable,
+                    false,
+                    "¡Pista! El papel blanco limpio (así esté arrugado) sí es aprovechable: va en la caneca AZUL [1]."
+                ),
+                new WasteItemData(
+                    "colchon_viejo",
+                    "Colchón Viejo Desechado",
+                    BinCategory.RedSpecial,
+                    false,
+                    "¡Pista! Los colchones y residuos voluminosos requieren recolección especial: van en la caneca ROJA [2]."
                 )
             };
         }
