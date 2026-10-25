@@ -788,7 +788,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 21300000, guid: u1000000000000080000000000000001, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ea000000000000800000000000000001, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 21300000, guid: u1000000000000080000000000000002, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ea000000000000800000000000000002, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1142,7 +1142,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 21300000, guid: u1000000000000080000000000000002, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ea000000000000800000000000000002, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 21300000, guid: u1000000000000080000000000000002, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ea000000000000800000000000000002, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1399,9 +1399,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 21300000, guid: g1000000000000080000000000000001, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da000000000000800000000000000001, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1425,7 +1425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1532,7 +1532,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 21300000, guid: u1000000000000080000000000000004, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ea000000000000800000000000000004, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1629,8 +1629,8 @@ RectTransform:
   - {fileID: 1751}
   - {fileID: 1771}
   m_Father: {fileID: 1001}
-  m_AnchoredPosition: {x: 145, y: -160}
-  m_SizeDelta: {x: 860, y: 270}
+  m_AnchoredPosition: {x: 0, y: -220}
+  m_SizeDelta: {x: 1000, y: 230}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1667,8 +1667,8 @@ RectTransform:
   - {fileID: 1716}
   - {fileID: 1721}
   m_Father: {fileID: 1701}
-  m_AnchoredPosition: {x: -300, y: 0}
-  m_SizeDelta: {x: 175, y: 235}
+  m_AnchoredPosition: {x: -134, y: 0}
+  m_SizeDelta: {x: 165, y: 215}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1687,7 +1687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000001, type: 3}
   m_Type: 0
@@ -1778,8 +1778,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1711}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 165, y: 110}
+  m_AnchoredPosition: {x: 0, y: -85}
+  m_SizeDelta: {x: 155, y: 32}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1870,8 +1870,8 @@ RectTransform:
   - {fileID: 1736}
   - {fileID: 1741}
   m_Father: {fileID: 1701}
-  m_AnchoredPosition: {x: -100, y: 0}
-  m_SizeDelta: {x: 175, y: 235}
+  m_AnchoredPosition: {x: 104, y: 0}
+  m_SizeDelta: {x: 165, y: 215}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1890,7 +1890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000002, type: 3}
   m_Type: 0
@@ -1981,8 +1981,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1731}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 165, y: 110}
+  m_AnchoredPosition: {x: 0, y: -85}
+  m_SizeDelta: {x: 155, y: 32}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2073,8 +2073,8 @@ RectTransform:
   - {fileID: 1756}
   - {fileID: 1761}
   m_Father: {fileID: 1701}
-  m_AnchoredPosition: {x: 100, y: 0}
-  m_SizeDelta: {x: 175, y: 235}
+  m_AnchoredPosition: {x: 329, y: 0}
+  m_SizeDelta: {x: 165, y: 215}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2093,7 +2093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000003, type: 3}
   m_Type: 0
@@ -2184,8 +2184,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1751}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 165, y: 110}
+  m_AnchoredPosition: {x: 0, y: -85}
+  m_SizeDelta: {x: 155, y: 32}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2276,8 +2276,8 @@ RectTransform:
   - {fileID: 1776}
   - {fileID: 1781}
   m_Father: {fileID: 1701}
-  m_AnchoredPosition: {x: 300, y: 0}
-  m_SizeDelta: {x: 175, y: 235}
+  m_AnchoredPosition: {x: -359, y: 0}
+  m_SizeDelta: {x: 165, y: 215}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2296,7 +2296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000004, type: 3}
   m_Type: 0
@@ -2387,8 +2387,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1771}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 165, y: 110}
+  m_AnchoredPosition: {x: 0, y: -85}
+  m_SizeDelta: {x: 155, y: 32}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2870,7 +2870,7 @@ MonoBehaviour:
   riverRecoveringSprite: {fileID: 21300000, guid: f1000000000000080000000000000002, type: 3}
   riverCleanSprite: {fileID: 21300000, guid: f1000000000000080000000000000003, type: 3}
   guardianCharacterImage: {fileID: 1503}
-  guardianIdleSprite: {fileID: 21300000, guid: g1000000000000080000000000000001, type: 3}
+  guardianIdleSprite: {fileID: 21300000, guid: da000000000000800000000000000001, type: 3}
   guardianHappySprite: {fileID: 0}
   guardianEmpathySprite: {fileID: 0}
   feedbackBubbleObject: {fileID: 1600}
@@ -2901,8 +2901,8 @@ MonoBehaviour:
   - {fileID: 1754}
   - {fileID: 1774}
   wasteSpawnPosition: {x: -180, y: -10}
-  activeFishSprite: {fileID: 21300000, guid: u1000000000000080000000000000002, type: 3}
-  lostFishSprite: {fileID: 21300000, guid: u1000000000000080000000000000003, type: 3}
+  activeFishSprite: {fileID: 21300000, guid: ea000000000000800000000000000002, type: 3}
+  lostFishSprite: {fileID: 21300000, guid: ea000000000000800000000000000003, type: 3}
   wasteCatalog:
   - itemId: "botella_pet"
     displayName: "Botella Plástica PET"
