@@ -223,10 +223,10 @@ MonoBehaviour:
   m_Name: 
   musicSource: {fileID: 302}
   sfxSource: {fileID: 303}
-  backgroundMusic: {fileID: 0}
-  correctChordClip: {fileID: 0}
-  errorWaterDropClip: {fileID: 0}
-  selectClickClip: {fileID: 0}
+  backgroundMusic: {fileID: 8300000, guid: 7bde39a7e0140574f9aedda327f551f3, type: 3}
+  correctChordClip: {fileID: 8300000, guid: 36c8125b00b2b1e4fa94c0da5e0a9185, type: 3}
+  errorWaterDropClip: {fileID: 8300000, guid: 671e501b4bded1646aaf20562796b676, type: 3}
+  selectClickClip: {fileID: 8300000, guid: 797c69696f793e74189d516aa71d0a61, type: 3}
   musicVolume: 0.35
   sfxVolume: 0.85
   isMuted: 0
@@ -359,9 +359,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.32, g: 0.28, b: 0.24, a: 1.0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f1000000000000080000000000000001, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -786,9 +786,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.12, g: 0.48, b: 0.68, a: 0.9}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: u1000000000000080000000000000001, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -857,7 +857,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "RÍO LIMPIO ADVENTURE"
+  m_Text: ""
 
 --- !u!114 &1314
 MonoBehaviour:
@@ -1085,9 +1085,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.91, g: 0.3, b: 0.24, a: 1.0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: u1000000000000080000000000000002, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1140,9 +1140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.91, g: 0.3, b: 0.24, a: 1.0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: u1000000000000080000000000000002, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1195,9 +1195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.91, g: 0.3, b: 0.24, a: 1.0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: u1000000000000080000000000000002, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1399,9 +1399,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.28, g: 0.58, b: 0.36, a: 0.9}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: g1000000000000080000000000000001, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1530,9 +1530,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.99, g: 0.97, b: 0.9, a: 0.98}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: u1000000000000080000000000000004, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1687,9 +1687,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16, g: 0.5, b: 0.73, a: 1.0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000001, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1742,9 +1742,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1.0, g: 0.88, b: 0.25, a: 0.65}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.85}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000005, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1890,9 +1890,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8, g: 0.26, b: 0.21, a: 1.0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000002, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1945,9 +1945,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1.0, g: 0.88, b: 0.25, a: 0.65}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.85}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000005, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2093,9 +2093,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16, g: 0.71, b: 0.39, a: 1.0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000003, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2148,9 +2148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1.0, g: 0.88, b: 0.25, a: 0.65}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.85}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000005, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2296,9 +2296,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5, g: 0.55, b: 0.55, a: 1.0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000004, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2351,9 +2351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1.0, g: 0.88, b: 0.25, a: 0.65}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.85}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000005, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2866,11 +2866,11 @@ MonoBehaviour:
   livesCountText: {fileID: 1463}
   levelStatusText: {fileID: 1473}
   stationBackgroundImage: {fileID: 1103}
-  riverPollutedSprite: {fileID: 0}
-  riverRecoveringSprite: {fileID: 0}
-  riverCleanSprite: {fileID: 0}
+  riverPollutedSprite: {fileID: 21300000, guid: f1000000000000080000000000000001, type: 3}
+  riverRecoveringSprite: {fileID: 21300000, guid: f1000000000000080000000000000002, type: 3}
+  riverCleanSprite: {fileID: 21300000, guid: f1000000000000080000000000000003, type: 3}
   guardianCharacterImage: {fileID: 1503}
-  guardianIdleSprite: {fileID: 0}
+  guardianIdleSprite: {fileID: 21300000, guid: g1000000000000080000000000000001, type: 3}
   guardianHappySprite: {fileID: 0}
   guardianEmpathySprite: {fileID: 0}
   feedbackBubbleObject: {fileID: 1600}
@@ -2901,8 +2901,8 @@ MonoBehaviour:
   - {fileID: 1754}
   - {fileID: 1774}
   wasteSpawnPosition: {x: -180, y: -10}
-  activeFishSprite: {fileID: 0}
-  lostFishSprite: {fileID: 0}
+  activeFishSprite: {fileID: 21300000, guid: u1000000000000080000000000000002, type: 3}
+  lostFishSprite: {fileID: 21300000, guid: u1000000000000080000000000000003, type: 3}
   wasteCatalog:
   - itemId: "botella_pet"
     displayName: "Botella Plástica PET"
