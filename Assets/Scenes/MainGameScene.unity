@@ -264,6 +264,8 @@ RectTransform:
   - {fileID: 1701}
   - {fileID: 1801}
   - {fileID: 1901}
+  - {fileID: 2501}
+  - {fileID: 2551}
   m_Father: {fileID: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -396,7 +398,7 @@ RectTransform:
   - {fileID: 1221}
   - {fileID: 1241}
   m_Father: {fileID: 1001}
-  m_AnchoredPosition: {x: -420, y: 285}
+  m_AnchoredPosition: {x: -430, y: 275}
   m_SizeDelta: {x: 360, y: 110}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -432,8 +434,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1201}
-  m_AnchoredPosition: {x: 0, y: 42}
-  m_SizeDelta: {x: 340, y: 32}
+  m_AnchoredPosition: {x: 0, y: 40}
+  m_SizeDelta: {x: 340, y: 30}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -452,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1.0, g: 1.0, b: 1.0, a: 1}
+  m_Color: {r: 1.0, g: 1.0, b: 1.0, a: 1.0}
   m_RaycastTarget: 0
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -507,8 +509,8 @@ RectTransform:
   - {fileID: 1231}
   - {fileID: 1251}
   m_Father: {fileID: 1201}
-  m_AnchoredPosition: {x: 0, y: 8}
-  m_SizeDelta: {x: 330, y: 38}
+  m_AnchoredPosition: {x: 0, y: 6}
+  m_SizeDelta: {x: 330, y: 36}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -693,7 +695,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1201}
   m_AnchoredPosition: {x: 0, y: -32}
-  m_SizeDelta: {x: 200, y: 32}
+  m_SizeDelta: {x: 200, y: 30}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -727,7 +729,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "0 / 80"
+  m_Text: "0 / 12"
 
 --- !u!114 &1244
 MonoBehaviour:
@@ -893,12 +895,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: 
-  - {fileID: 1411}
   - {fileID: 1421}
+  - {fileID: 1411}
   - {fileID: 1471}
   m_Father: {fileID: 1001}
-  m_AnchoredPosition: {x: 430, y: 285}
-  m_SizeDelta: {x: 350, y: 115}
+  m_AnchoredPosition: {x: 430, y: 275}
+  m_SizeDelta: {x: 350, y: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -933,8 +935,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1401}
-  m_AnchoredPosition: {x: 0, y: 42}
-  m_SizeDelta: {x: 320, y: 30}
+  m_AnchoredPosition: {x: -85, y: 18}
+  m_SizeDelta: {x: 90, y: 26}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -953,22 +955,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1.0, g: 1.0, b: 1.0, a: 1}
+  m_Color: {r: 0.96, g: 0.78, b: 0.41, a: 1.0}
   m_RaycastTarget: 0
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 16
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "VIDAS RESTANTES"
+  m_Text: "VIDAS:"
 
 --- !u!114 &1414
 MonoBehaviour:
@@ -1010,8 +1012,8 @@ RectTransform:
   - {fileID: 1451}
   - {fileID: 1461}
   m_Father: {fileID: 1401}
-  m_AnchoredPosition: {x: 0, y: 4}
-  m_SizeDelta: {x: 300, y: 46}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 350, y: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1030,9 +1032,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.55, g: 0.33, b: 0.16, a: 0.95}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: a8c773b23f9d34de4867b288179ea312, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1065,8 +1067,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421}
-  m_AnchoredPosition: {x: -95, y: 0}
-  m_SizeDelta: {x: 52, y: 34}
+  m_AnchoredPosition: {x: -20, y: 18}
+  m_SizeDelta: {x: 52, y: 36}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1120,8 +1122,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421}
-  m_AnchoredPosition: {x: -27, y: 0}
-  m_SizeDelta: {x: 52, y: 34}
+  m_AnchoredPosition: {x: 28, y: 18}
+  m_SizeDelta: {x: 52, y: 36}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1175,8 +1177,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1421}
-  m_AnchoredPosition: {x: 41, y: 0}
-  m_SizeDelta: {x: 52, y: 34}
+  m_AnchoredPosition: {x: 76, y: 18}
+  m_SizeDelta: {x: 52, y: 36}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1221,7 +1223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1461
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1305,8 +1307,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1401}
-  m_AnchoredPosition: {x: 40, y: -35}
-  m_SizeDelta: {x: 220, y: 30}
+  m_AnchoredPosition: {x: 0, y: -18}
+  m_SizeDelta: {x: 330, y: 30}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1325,7 +1327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1.0, g: 1.0, b: 1.0, a: 1}
+  m_Color: {r: 1.0, g: 0.88, b: 0.35, a: 1.0}
   m_RaycastTarget: 0
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -1340,7 +1342,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "NIVEL FINAL"
+  m_Text: "PUNTAJE: 0 pts"
 
 --- !u!114 &1474
 MonoBehaviour:
@@ -1499,7 +1501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1601
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1510,7 +1512,7 @@ RectTransform:
   m_Children: 
   - {fileID: 1611}
   m_Father: {fileID: 1001}
-  m_AnchoredPosition: {x: -160, y: 195}
+  m_AnchoredPosition: {x: -160, y: 205}
   m_SizeDelta: {x: 480, y: 140}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1650,7 +1652,7 @@ GameObject:
   - component: {fileID: 1713}
   - component: {fileID: 1714}
   m_Layer: 5
-  m_Name: RecyclingBin_1_Blue
+  m_Name: RecyclingBin_1_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1689,7 +1691,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000001, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000006, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1813,7 +1815,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "[1] AZUL
+  m_Text: "[1] BLANCA
 APROVECHABLES"
 
 --- !u!114 &1724
@@ -1837,7 +1839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b2c3d4e5f640018000000000000003, type: 3}
   m_Name: 
   binCategory: 0
-  binTitle: "[1] AZUL APROVECHABLES"
+  binTitle: "[1] BLANCA APROVECHABLES"
   shortcutKeyNumber: 1
   binSpriteImage: {fileID: 1713}
   glowEffectImage: {fileID: 1718}
@@ -1853,7 +1855,7 @@ GameObject:
   - component: {fileID: 1733}
   - component: {fileID: 1734}
   m_Layer: 5
-  m_Name: RecyclingBin_2_Red
+  m_Name: RecyclingBin_2_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1892,7 +1894,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000002, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000003, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2016,8 +2018,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "[2] ROJA
-ESPECIALES"
+  m_Text: "[2] VERDE
+ORGÁNICOS"
 
 --- !u!114 &1744
 MonoBehaviour:
@@ -2040,7 +2042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b2c3d4e5f640018000000000000003, type: 3}
   m_Name: 
   binCategory: 1
-  binTitle: "[2] ROJA ESPECIALES"
+  binTitle: "[2] VERDE ORGÁNICOS"
   shortcutKeyNumber: 2
   binSpriteImage: {fileID: 1733}
   glowEffectImage: {fileID: 1738}
@@ -2056,7 +2058,7 @@ GameObject:
   - component: {fileID: 1753}
   - component: {fileID: 1754}
   m_Layer: 5
-  m_Name: RecyclingBin_3_Green
+  m_Name: RecyclingBin_3_Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2095,7 +2097,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000003, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000007, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2219,8 +2221,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "[3] VERDE
-ORGÁNICOS"
+  m_Text: "[3] NEGRA NO
+APROVECHABLE"
 
 --- !u!114 &1764
 MonoBehaviour:
@@ -2243,7 +2245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b2c3d4e5f640018000000000000003, type: 3}
   m_Name: 
   binCategory: 2
-  binTitle: "[3] VERDE ORGÁNICOS"
+  binTitle: "[3] NEGRA NO APROVECHABLE"
   shortcutKeyNumber: 3
   binSpriteImage: {fileID: 1753}
   glowEffectImage: {fileID: 1758}
@@ -2259,7 +2261,7 @@ GameObject:
   - component: {fileID: 1773}
   - component: {fileID: 1774}
   m_Layer: 5
-  m_Name: RecyclingBin_4_Grey
+  m_Name: RecyclingBin_4_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2298,7 +2300,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000004, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1000000000000080000000000000002, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2422,8 +2424,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "[4] GRIS
-NO APROVECHABLE"
+  m_Text: "[4] ROJA
+PELIGROSOS"
 
 --- !u!114 &1784
 MonoBehaviour:
@@ -2446,7 +2448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b2c3d4e5f640018000000000000003, type: 3}
   m_Name: 
   binCategory: 3
-  binTitle: "[4] GRIS NO APROVECHABLE"
+  binTitle: "[4] ROJA PELIGROSOS"
   shortcutKeyNumber: 4
   binSpriteImage: {fileID: 1773}
   glowEffectImage: {fileID: 1778}
@@ -2463,6 +2465,7 @@ GameObject:
   - component: {fileID: 1804}
   - component: {fileID: 1805}
   - component: {fileID: 1806}
+  - component: {fileID: 1807}
   m_Layer: 5
   m_Name: ActiveWasteItem
   m_TagString: Untagged
@@ -2479,8 +2482,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: 
   - {fileID: 1811}
+  - {fileID: 1821}
   m_Father: {fileID: 1001}
-  m_AnchoredPosition: {x: -160, y: 10}
+  m_AnchoredPosition: {x: -160, y: 25}
   m_SizeDelta: {x: 165, y: 165}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2526,10 +2530,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1800}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
-  m_EffectColor: {r: 1, g: 0.85, b: 0.1, a: 1}
-  m_EffectDistance: {x: 5, y: -5}
+  m_EffectColor: {r: 1, g: 0.1, b: 0.1, a: 1}
+  m_EffectDistance: {x: 4, y: -4}
   m_UseGraphicAlpha: 1
 --- !u!114 &1806
 MonoBehaviour:
@@ -2543,6 +2547,23 @@ MonoBehaviour:
   itemLabelText: {fileID: 1813}
   selectionOutline: {fileID: 1805}
   isSelectedForClickMode: 0
+--- !u!114 &1807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 1800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f640018000000000000008, type: 3}
+  m_Name: 
+  timeLimitPerItem: 6
+  warningThreshold: 2.5
+  pulseFrequency: 9
+  timerFillRect: {fileID: 1831}
+  timerFillImage: {fileID: 1833}
+  maxBarWidth: 164
+  normalColor: {r: 0.2, g: 0.85, b: 0.35, a: 1}
+  warningColor: {r: 0.95, g: 0.2, b: 0.15, a: 1}
+  targetItem: {fileID: 1806}
 
 --- !u!1 &1810
 GameObject:
@@ -2569,7 +2590,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1801}
-  m_AnchoredPosition: {x: 0, y: -92}
+  m_AnchoredPosition: {x: 0, y: -82}
   m_SizeDelta: {x: 240, y: 36}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2618,6 +2639,115 @@ MonoBehaviour:
   m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
 
+--- !u!1 &1820
+GameObject:
+  m_ObjectHideFlags: 0
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1821}
+  - component: {fileID: 1822}
+  - component: {fileID: 1823}
+  m_Layer: 5
+  m_Name: TimerBarBg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1821
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 1820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: 
+  - {fileID: 1831}
+  m_Father: {fileID: 1801}
+  m_AnchoredPosition: {x: 0, y: 92}
+  m_SizeDelta: {x: 172, y: 20}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1822
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 1820}
+  m_CullTransparentMesh: 1
+--- !u!114 &1823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 1820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.08, g: 0.1, b: 0.14, a: 0.92}
+  m_RaycastTarget: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1.0
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+
+--- !u!1 &1830
+GameObject:
+  m_ObjectHideFlags: 0
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1831}
+  - component: {fileID: 1832}
+  - component: {fileID: 1833}
+  m_Layer: 5
+  m_Name: TimerBarFill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1831
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 1830}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1821}
+  m_AnchoredPosition: {x: 4, y: 0}
+  m_SizeDelta: {x: 164, y: 12}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!222 &1832
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 1830}
+  m_CullTransparentMesh: 1
+--- !u!114 &1833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 1830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.2, g: 0.85, b: 0.35, a: 1}
+  m_RaycastTarget: 0
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1.0
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+
 --- !u!1 &1900
 GameObject:
   m_ObjectHideFlags: 0
@@ -2644,8 +2774,8 @@ RectTransform:
   - {fileID: 1911}
   - {fileID: 1921}
   m_Father: {fileID: 1001}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 680, y: 420}
+  m_AnchoredPosition: {x: 0, y: -5}
+  m_SizeDelta: {x: 760, y: 520}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2664,9 +2794,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.08, g: 0.16, b: 0.22, a: 0.96}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: a8c773b23f9d34de4867b288179ea311, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2700,8 +2830,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1901}
-  m_AnchoredPosition: {x: 0, y: 145}
-  m_SizeDelta: {x: 620, y: 50}
+  m_AnchoredPosition: {x: 0, y: 215}
+  m_SizeDelta: {x: 700, y: 45}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2774,8 +2904,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1901}
-  m_AnchoredPosition: {x: 0, y: -10}
-  m_SizeDelta: {x: 600, y: 240}
+  m_AnchoredPosition: {x: 0, y: -25}
+  m_SizeDelta: {x: 700, y: 410}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2815,6 +2945,503 @@ MonoBehaviour:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_GameObject: {fileID: 1920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EffectColor: {r: 0.08, g: 0.08, b: 0.08, a: 0.95}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
+
+--- !u!1 &2500
+GameObject:
+  m_ObjectHideFlags: 0
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2501}
+  - component: {fileID: 2502}
+  - component: {fileID: 2503}
+  m_Layer: 5
+  m_Name: StartMissionPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2501
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2500}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: 
+  - {fileID: 2511}
+  - {fileID: 2521}
+  - {fileID: 2531}
+  m_Father: {fileID: 1001}
+  m_AnchoredPosition: {x: 0, y: -5}
+  m_SizeDelta: {x: 780, y: 530}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2502
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2500}
+  m_CullTransparentMesh: 1
+--- !u!114 &2503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Sprite: {fileID: 21300000, guid: a8c773b23f9d34de4867b288179ea311, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1.0
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+
+--- !u!1 &2510
+GameObject:
+  m_ObjectHideFlags: 0
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2511}
+  - component: {fileID: 2512}
+  - component: {fileID: 2513}
+  - component: {fileID: 2514}
+  m_Layer: 5
+  m_Name: StartMissionTitle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2511
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2510}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2501}
+  m_AnchoredPosition: {x: 0, y: 220}
+  m_SizeDelta: {x: 720, y: 45}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2512
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2510}
+  m_CullTransparentMesh: 1
+--- !u!114 &2513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1.0, g: 0.88, b: 0.35, a: 1}
+  m_RaycastTarget: 0
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 24
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: "🏆 RÍO LIMPIO: MISIÓN RECICLAJE 🏆"
+--- !u!114 &2514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EffectColor: {r: 0.08, g: 0.08, b: 0.08, a: 0.95}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
+
+--- !u!1 &2520
+GameObject:
+  m_ObjectHideFlags: 0
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2521}
+  - component: {fileID: 2522}
+  - component: {fileID: 2523}
+  - component: {fileID: 2524}
+  m_Layer: 5
+  m_Name: StartMissionBody
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2521
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2520}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2501}
+  m_AnchoredPosition: {x: 0, y: 22}
+  m_SizeDelta: {x: 720, y: 335}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2522
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2520}
+  m_CullTransparentMesh: 1
+--- !u!114 &2523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1.0, g: 1.0, b: 1.0, a: 1}
+  m_RaycastTarget: 0
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 16
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1.05
+  m_Text: "Instrucciones de la misión"
+--- !u!114 &2524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EffectColor: {r: 0.08, g: 0.08, b: 0.08, a: 0.95}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
+
+--- !u!1 &2530
+GameObject:
+  m_ObjectHideFlags: 0
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2531}
+  - component: {fileID: 2532}
+  - component: {fileID: 2533}
+  - component: {fileID: 2534}
+  m_Layer: 5
+  m_Name: StartMissionButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2531
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2530}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: 
+  - {fileID: 2541}
+  m_Father: {fileID: 2501}
+  m_AnchoredPosition: {x: 0, y: -202}
+  m_SizeDelta: {x: 340, y: 64}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2532
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2530}
+  m_CullTransparentMesh: 1
+--- !u!114 &2533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Sprite: {fileID: 21300000, guid: a8c773b23f9d34de4867b288179ea312, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1.0
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &2534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_Navigation:
+    m_Mode: 0
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.95, b: 0.7, a: 1}
+    m_PressedColor: {r: 0.8, g: 0.75, b: 0.5, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_TargetGraphic: {fileID: 2533}
+
+--- !u!1 &2540
+GameObject:
+  m_ObjectHideFlags: 0
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2541}
+  - component: {fileID: 2542}
+  - component: {fileID: 2543}
+  - component: {fileID: 2544}
+  m_Layer: 5
+  m_Name: StartMissionButtonText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2541
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2540}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2531}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 48}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2542
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2540}
+  m_CullTransparentMesh: 1
+--- !u!114 &2543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1.0, g: 0.95, b: 0.8, a: 1}
+  m_RaycastTarget: 0
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 18
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: "¡COMENZAR MISIÓN!"
+--- !u!114 &2544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EffectColor: {r: 0.08, g: 0.08, b: 0.08, a: 0.95}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
+
+--- !u!1 &2550
+GameObject:
+  m_ObjectHideFlags: 0
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2551}
+  - component: {fileID: 2552}
+  - component: {fileID: 2553}
+  - component: {fileID: 2554}
+  m_Layer: 5
+  m_Name: MuteToggleButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2551
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: 
+  - {fileID: 2561}
+  m_Father: {fileID: 1001}
+  m_AnchoredPosition: {x: 555, y: 205}
+  m_SizeDelta: {x: 100, y: 36}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2552
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2550}
+  m_CullTransparentMesh: 1
+--- !u!114 &2553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Sprite: {fileID: 21300000, guid: a8c773b23f9d34de4867b288179ea312, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1.0
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &2554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_Navigation:
+    m_Mode: 0
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.95, b: 0.7, a: 1}
+    m_PressedColor: {r: 0.8, g: 0.75, b: 0.5, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_TargetGraphic: {fileID: 2553}
+
+--- !u!1 &2560
+GameObject:
+  m_ObjectHideFlags: 0
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2561}
+  - component: {fileID: 2562}
+  - component: {fileID: 2563}
+  - component: {fileID: 2564}
+  m_Layer: 5
+  m_Name: MuteButtonLabel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2561
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2560}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2551}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 92, y: 30}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2562
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2560}
+  m_CullTransparentMesh: 1
+--- !u!114 &2563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.75, g: 1.0, b: 0.78, a: 1}
+  m_RaycastTarget: 0
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 16
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: "🔊 [M]"
+--- !u!114 &2564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 2560}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
@@ -2875,6 +3502,12 @@ MonoBehaviour:
   guardianEmpathySprite: {fileID: 0}
   feedbackBubbleObject: {fileID: 1600}
   feedbackBubbleText: {fileID: 1613}
+  startMissionPanel: {fileID: 2500}
+  startMissionTitleText: {fileID: 2513}
+  startMissionBodyText: {fileID: 2523}
+  muteToggleButton: {fileID: 2554}
+  muteButtonLabel: {fileID: 2563}
+  startMissionButton: {fileID: 2534}
   endGamePanel: {fileID: 1900}
   endGameTitleText: {fileID: 1913}
   endGameImpactSummaryText: {fileID: 1923}
@@ -2886,13 +3519,15 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1b2c3d4e5f640018000000000000006, type: 3}
   m_Name: 
-  totalWasteTarget: 80
+  totalWasteTarget: 12
   maxEcosystemLives: 3
-  pointsPerItem: 8
+  basePointsPerItem: 100
+  penaltyPointsPerError: 150
   currentClassifiedCount: 0
+  currentScore: 0
   currentLives: 3
   currentStreak: 0
-  isGameActive: 1
+  isGameActive: 0
   uiManager: {fileID: 402}
   activeWasteItem: {fileID: 1806}
   recyclingBins:
@@ -2900,7 +3535,7 @@ MonoBehaviour:
   - {fileID: 1734}
   - {fileID: 1754}
   - {fileID: 1774}
-  wasteSpawnPosition: {x: -180, y: -10}
+  wasteSpawnPosition: {x: -160, y: 25}
   activeFishSprite: {fileID: 21300000, guid: ea000000000000800000000000000002, type: 3}
   lostFishSprite: {fileID: 21300000, guid: ea000000000000800000000000000003, type: 3}
   wasteCatalog:

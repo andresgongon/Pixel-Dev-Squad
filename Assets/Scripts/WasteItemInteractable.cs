@@ -16,19 +16,25 @@ namespace RioLimpio
         [Header("Current Item State")]
         public WasteItemData currentData;
         public bool isSelectedForClickMode = false;
+        public bool isBeingDragged = false;
 
         private RectTransform rectTransform;
         private CanvasGroup canvasGroup;
         private Canvas parentCanvas;
         private Vector2 homeAnchoredPosition;
         private bool wasDroppedOnBin = false;
+        private WasteInspectionMachine inspectionMachine;
+        private BoxCollider2D physicsCollider;
+        private Rigidbody2D physicsBody;
 
-        // Caches component references when the object initializes
         private void Awake()
         {
             rectTransform = GetComponent<RectTransform>();
             canvasGroup = GetComponent<CanvasGroup>();
             parentCanvas = GetComponentInParent<Canvas>();
+            inspectionMachine = GetComponent<WasteInspectionMachine>();
+
+            ConfigurePhysicsCollider();
 
             if (itemIconImage == null)
             {
@@ -41,22 +47,55 @@ namespace RioLimpio
             }
         }
 
-        // Stores the default spawn position so the item can return if dropped outside a bin
+        // Ensures kinematic 2D physics collider is attached so OnTriggerEnter2D fires over bins
+        private void ConfigurePhysicsCollider()
+        {
+            physicsBody = GetComponent<Rigidbody2D>();
+            if (physicsBody == null)
+            {
+                physicsBody = gameObject.AddComponent<Rigidbody2D>();
+            }
+            physicsBody.bodyType = RigidbodyType2D.Kinematic;
+            physicsBody.gravityScale = 0f;
+            physicsBody.useFullKinematicContacts = true;
+
+            physicsCollider = GetComponent<BoxCollider2D>();
+            if (physicsCollider == null)
+            {
+                physicsCollider = gameObject.AddComponent<BoxCollider2D>();
+            }
+            physicsCollider.isTrigger = true;
+            physicsCollider.size = new Vector2(115f, 115f);
+        }
+
         private void Start()
         {
             homeAnchoredPosition = rectTransform.anchoredPosition;
         }
 
-        // Assigns new waste item data and resets the position and selection state
-        public void SetupWasteItem(WasteItemData data, Vector2 spawnPosition)
+        // Sets up data, sprite, label, and home position on the inspection tray
+        public void SetupWasteItem(WasteItemData data, Vector2 spawnPosition, float? customTimeLimit = null)
         {
             currentData = data;
             homeAnchoredPosition = spawnPosition;
+
+            if (rectTransform == null)
+            {
+                rectTransform = GetComponent<RectTransform>();
+            }
+
             rectTransform.anchoredPosition = spawnPosition;
             rectTransform.localScale = Vector3.one;
+            rectTransform.localRotation = Quaternion.identity;
 
+            isBeingDragged = false;
             isSelectedForClickMode = false;
             wasDroppedOnBin = false;
+
+            if (canvasGroup == null)
+            {
+                canvasGroup = GetComponent<CanvasGroup>();
+            }
             canvasGroup.alpha = 1f;
             canvasGroup.blocksRaycasts = true;
 
@@ -65,13 +104,13 @@ namespace RioLimpio
                 selectionOutline.enabled = false;
             }
 
-            // Update the sprite and accessible text label if valid data was provided
             if (currentData != null)
             {
                 if (itemIconImage != null)
                 {
                     itemIconImage.sprite = currentData.itemSprite;
                     itemIconImage.preserveAspect = true;
+                    itemIconImage.color = Color.white;
                 }
 
                 if (itemLabelText != null)
@@ -79,26 +118,31 @@ namespace RioLimpio
                     itemLabelText.text = currentData.displayName.ToUpper();
                 }
             }
+
+            if (inspectionMachine == null)
+            {
+                inspectionMachine = GetComponent<WasteInspectionMachine>();
+            }
+            if (inspectionMachine != null)
+            {
+                inspectionMachine.StartInspectionCycle(customTimeLimit);
+            }
         }
 
-        // Handles Click-to-Click / Tap-to-Tap selection for motor accessibility (WCAG 2.2)
+        // Click-to-Click selection (WCAG 2.2 accessibility)
         public void OnPointerClick(PointerEventData eventData)
         {
-            // Ignore click if the player was dragging the item
-            if (eventData.dragging)
-            {
-                return;
-            }
+            if (eventData.dragging) return;
 
             isSelectedForClickMode = !isSelectedForClickMode;
 
-            // Highlight the waste item when selected so the player knows to click a bin next
             if (isSelectedForClickMode)
             {
                 rectTransform.localScale = new Vector3(1.12f, 1.12f, 1f);
                 if (selectionOutline != null)
                 {
                     selectionOutline.enabled = true;
+                    selectionOutline.effectColor = new Color(0.2f, 0.9f, 0.3f, 1f);
                 }
                 if (AudioManager.Instance != null)
                 {
@@ -115,18 +159,23 @@ namespace RioLimpio
             }
         }
 
-        // Prepares the waste item when the player starts dragging it
+        // Begins dragging the item from the tray
         public void OnBeginDrag(PointerEventData eventData)
         {
+            isBeingDragged = true;
             wasDroppedOnBin = false;
             isSelectedForClickMode = false;
-            canvasGroup.alpha = 0.85f;
+            canvasGroup.alpha = 0.88f;
             canvasGroup.blocksRaycasts = false;
-            rectTransform.localScale = new Vector3(1.1f, 1.1f, 1f);
+            rectTransform.localScale = new Vector3(1.12f, 1.12f, 1f);
+
+            // Bring to front while dragging
+            transform.SetAsLastSibling();
 
             if (selectionOutline != null)
             {
                 selectionOutline.enabled = true;
+                selectionOutline.effectColor = new Color(1f, 0.9f, 0.2f, 1f);
             }
 
             if (AudioManager.Instance != null)
@@ -135,7 +184,7 @@ namespace RioLimpio
             }
         }
 
-        // Moves the waste item along with the mouse cursor or touch input
+        // Moves the waste item with pointer
         public void OnDrag(PointerEventData eventData)
         {
             if (parentCanvas == null)
@@ -143,7 +192,6 @@ namespace RioLimpio
                 parentCanvas = GetComponentInParent<Canvas>();
             }
 
-            // Divide delta by canvas scaleFactor so movement matches screen resolution
             if (parentCanvas != null)
             {
                 rectTransform.anchoredPosition += eventData.delta / parentCanvas.scaleFactor;
@@ -154,9 +202,10 @@ namespace RioLimpio
             }
         }
 
-        // Restores raycast blocking and returns the item to its home position if not dropped on a bin
+        // Restores interaction state and resets to home tray if dropped outside a bin
         public void OnEndDrag(PointerEventData eventData)
         {
+            isBeingDragged = false;
             canvasGroup.alpha = 1f;
             canvasGroup.blocksRaycasts = true;
             rectTransform.localScale = Vector3.one;
@@ -166,30 +215,32 @@ namespace RioLimpio
                 selectionOutline.enabled = false;
             }
 
-            // If the item was released outside any recycling bin, snap it back to the center
             if (!wasDroppedOnBin)
             {
                 ResetToHomePosition();
             }
         }
 
-        // Marks the item as received by a bin and resets its selection state
+        // Marks item as received by a bin
         public void MarkDroppedOnBin()
         {
             wasDroppedOnBin = true;
+            isBeingDragged = false;
             isSelectedForClickMode = false;
+
             if (selectionOutline != null)
             {
                 selectionOutline.enabled = false;
             }
         }
 
-        // Returns the waste item back to its presentation position
+        // Returns item to its home tray position
         public void ResetToHomePosition()
         {
             rectTransform.anchoredPosition = homeAnchoredPosition;
             rectTransform.localScale = Vector3.one;
             isSelectedForClickMode = false;
+            isBeingDragged = false;
 
             if (selectionOutline != null)
             {
