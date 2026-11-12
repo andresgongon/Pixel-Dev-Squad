@@ -1,60 +1,77 @@
 # Pixel-Dev-Squad
-Repositorio - Programación para Videojuegos UNAD - Grupo 213027_3
-
-## 🎮 Proyecto Etapa 3: Río Limpio Adventure: Misión Reciclaje
-Videojuego educativo 2D (*Games for Change*) desarrollado en **Unity (`6000.3.20f1 LTS`)** enfocado en la separación de residuos sólidos en la fuente (Resolución 2184 de 2019) y la recuperación de un río andino para niños de básica primaria (7 a 12 años).
-
-### 🕹️ Controles e Interacción Accesible (WCAG 2.2 / DUA)
-* **Arrastrar y Soltar (*Drag & Drop*):** Arrastra el residuo activo hacia la caneca correspondiente.
-* **Toque a Toque (*Click-to-Click*):** Haz clic sobre el residuo para seleccionarlo y luego haz clic en la caneca destino.
-* **Teclado Numérico:** Usa las teclas **`1`** (Azul - Aprovechables), **`2`** (Roja - Especiales), **`3`** (Verde - Orgánicos) y **`4`** (Gris - No aprovechables / Trampa). Presiona **`R`** para reiniciar la partida.
-
-### 📂 Estructura del Proyecto en Unity
-* `Assets/Scenes/MainGameScene.unity`: Escena principal del centro de clasificación.
-* `Assets/Scripts/`: Lógica C# comentada en inglés (`GameManager.cs`, `UIManager.cs`, `RecyclingBin.cs`, `WasteItemInteractable.cs`, `WasteItemData.cs`, `AudioManager.cs`).
-* `Assets/Sprites/`: Recursos gráficos 2D de fondos, personaje, canecas y residuos.
-* `Assets/Audio/`: Música de fondo (`Music/`) y efectos sonoros de acierto/error (`SFX/`).
-* `Docs/`: Documentación técnica, declaración de IA, reporte de accesibilidad y sesión de crítica.
+**Repository for Video Game Programming Course (UNAD - Group 213027_3)**  
+**Tutor:** Gonzalo Andrés Barrera Rivera  
+**Project:** *Río Limpio Adventure: Recycling Mission* (Stage 4 Prototype)
 
 ---
 
-### Germán Andrés
-* **Rol de la industria:** Programador Lead / Gestor de Repositorio
-* **Ubicación:** Bogotá, Colombia
-* **Perfil breve:** Productor Multimedia, Desarrollador front-end y webmaster con experiencia en migraciones de plataformas, gestión de código y despliegue de interfaces. Enfocado en aplicar la lógica de programación web a la estructuración de repositorios y mecánicas de videojuegos.
+## 🎮 Game Concept & Overview
+*Río Limpio Adventure* is an educational 2D serious game developed in **Unity 6 (6000.3.20f1 LTS)**.  
+The game teaches children (ages 7 to 12) how to properly classify everyday waste according to the official **Colombian Color Code (Resolution 2184 of 2019)** while cleaning an Andean river ecosystem.
 
-![Foto personal](german/perfil.jpg)
+### ⏱️ Core Gameplay & Arcade Machine Mechanic
+* **Inspection Countdown Machine (`WasteInspectionMachine.cs`):** Each waste item spawns with a shrinking time limit bar (green → yellow → red) and progressive difficulty across rounds (`6.5s` → `5.5s` → `4.5s`). When remaining time drops below `2.5s`, the item pulses in scale and flashes bright red with an animated `Outline` alert.
+* **Arcade Speed-Scoring & Combo Streaks:** Fast classification awards a speed bonus (`+35 pts` per remaining second) plus progressive combo multipliers (`x1.25`, `x1.5 Frenzy`, `x2.0 Ultra Frenzy`) shown via animated floating score VFX popups. Errors or timeouts deduct `-150 pts`, break the streak, and cost 1 ecosystem life (native fish).
+* **Mandatory Player Registration & Arcade Hall of Fame:** Players must enter their name on the welcome screen (no preset defaults) and compete against persistent high-score records saved via `PlayerPrefs`.
+* **Progressive Ecosystem:** As the player classifies items, the river background transitions dynamically across 3 states: polluted (`0%`), recovering (`50%`), and clean (`100%`).
 
-### Comida favorita
-![Mi comida favorita](german/comida-favorita.png)
+---
 
+## ♻️ Colombian Waste Classification (Resolution 2184 of 2019)
+The game strictly implements the four unified containers defined by Colombian Resolution 2184:
+1. **White Bin [Key 1]:** Clean and dry recyclables (`bin_white_recyclable.png` — plastic bottles, clean cardboard, paper, aluminum cans).
+2. **Green Bin [Key 2]:** Biodegradable organic waste (`bin_green_organic.png` — banana/orange peels, fruit scraps).
+3. **Black Bin [Key 3]:** Non-recyclables and trap items (`bin_black_nonrecyclable.png` — dirty napkins, greasy snack wrappers).
+4. **Red Bin [Key 4]:** Hazardous and special post-consumer waste (`bin_red_special.png` — electronic waste / RAEE, used tires, mattresses).
 
-**Nombre Estudiante:** Eric Daniel Molina
+---
 
-![Foto personal](Eric/EricMolina.jpg)
+## 🕹️ Controls & Accessibility (WCAG 2.2 & UDL / DUA)
+* **Drag & Drop:** Click and drag the waste item directly onto any bin (`OnTriggerEnter2D` highlights proximity before drop).
+* **Click-to-Click (WCAG 2.5.7):** Click the waste item once to select it, then click the target bin (no sustained drag required).
+* **Full Keyboard Operation (WCAG 2.1.1):** Press keys **`1`**, **`2`**, **`3`**, or **`4`** to sort instantly; **`ENTER`** to start; **`N`** to edit player name at the end screen; **`R`** to restart.
+* **Independent Audio Control (WCAG 1.4.2):** Click the **`🔊 [M]`** HUD toggle button or press key **`M`** to mute/unmute music and sound effects at any time.
+* **Non-Color Indicators & UDL Principles (WCAG 1.4.1 / 1.4.3):** Every bin combines distinct color, geometric pattern, icon, shortcut number, and uppercase text label, supported by multiple means of **Representation** (visual/audio feedback), **Action & Expression** (3 input methods), and **Engagement** (personalization, hints, and speed combos).
 
-**Rol:** Game Desinger
+---
 
-**Ubicación:** Colombia, Bogota D.C.
+## 🏗️ Technical Architecture & Good Practices
+* **Dynamic JSON Data Loading:** All 12 waste items are loaded at runtime from [`Assets/Resources/waste_catalog.json`](Assets/Resources/waste_catalog.json) via `JsonUtility`, avoiding hardcoded item lists in C# scripts.
+* **2D Physics & Triggers:** `WasteItemInteractable` configures a kinematic `Rigidbody2D` + `BoxCollider2D` trigger, firing `OnTriggerEnter2D` and `OnTriggerExit2D` proximity highlights on each `RecyclingBin` trigger zone (`BoxCollider2D`).
+* **Modular English-Documented Scripts:**
+  * [`GameManager.cs`](Assets/Scripts/GameManager.cs): Singleton managing game flow, mandatory name input, speed-scoring, persistent Top-10 Hall of Fame, and JSON loading.
+  * [`WasteInspectionMachine.cs`](Assets/Scripts/WasteInspectionMachine.cs): *Generated by AI* mechanic controlling the countdown bar, progressive pace, urgent red pulsing alerts, and timeout penalties.
+  * [`WasteItemInteractable.cs`](Assets/Scripts/WasteItemInteractable.cs): Drag & Drop, Click-to-Click selection, and kinematic 2D trigger setup.
+  * [`RecyclingBin.cs`](Assets/Scripts/RecyclingBin.cs): Drop handling, `OnTriggerEnter2D` hover highlighting, error shake animation, and golden celebration glow.
+  * [`UIManager.cs`](Assets/Scripts/UIManager.cs): Updates HUD cards, animated floating score VFX popups, start/end modals, mute button visual state, and Sofía's pedagogical feedback bubble.
+  * [`AudioManager.cs`](Assets/Scripts/AudioManager.cs): Background music and SFX playback with pitch progression and independent mute support.
+  * [`WasteItemData.cs`](Assets/Scripts/WasteItemData.cs): Resolution 2184 `BinCategory` enum and JSON deserialization models.
 
-**Perfil:** Estudiante de septimo semestre de la UNAD, mi deseo es poder crear contenido gaming basado en la cultura colombiana, actualmente soy tecnico en mantenimiento de computadores en la UMNG y mi pasion son los animes como se supondra tambien los video juegos
+---
 
-### Comida favorito
+## 👥 Team Members & Roles
 
-![Mi plato favorito](Eric/Plato_Favorito.png)
-## Integrante
-![Foto personal](Oscar/foto_oscar.jpg)
-**Nombre:** Oscar Agudelo
+### Germán Andrés González González
+* **Role:** Lead Programmer & Repository Manager
+* **Location:** Bogotá, Colombia
+* **Bio:** Multimedia Producer and front-end developer with experience in code management, UI architecture, and game logic. Focused on C# scripting, JSON data loading, arcade mechanics, and GitHub repository workflow.
 
-**Rol en la industria de videojuegos:**  
-Artista Técnico
+### Daniel Enrique Bermejo Polo
+* **Role:** UI Designer & AI Declaration
+* **Location:** Colombia
+* **Bio:** Responsible for Resolution 2184 bin sprites, waste item graphics, WCAG 2.2 / UDL accessibility checks, and documenting the ethical use of generative AI tools.
 
-**Ubicación:**  
-Quetame Cundinamarca
+### Oscar Yesid Agudelo Ardila
+* **Role:** Sound Engineer & Audio Integration
+* **Location:** Quetame, Cundinamarca, Colombia
+* **Bio:** Responsible for music composition, acierto/error SFX, dynamic audio pitch progression, and WCAG 1.4.2 mute integration.
 
-**Perfil breve:**  
-Estudiante interesado en el desarrollo de videojuegos, integrando aspectos técnicos y artísticos mediante herramientas como Unity, diseño digital y trabajo colaborativo con control de versiones.
+### Eric Daniel Molina Martínez
+* **Role:** Visual Artist & Stage Designer
+* **Location:** Bogotá D.C., Colombia
+* **Bio:** UNAD student responsible for 2D backgrounds (3 river states), character design (Sofía), and colorblindness visual patterns.
 
-## Plato favorito
-
-![Plato favorito](Oscar/plato_favorito.jpg)
+### Karem Angélica Lucía Malagón Bobadilla
+* **Role:** Technical Documentation & Quality Assurance
+* **Location:** Colombia
+* **Bio:** Responsible for technical report compilation under APA 7 standards, WebAIM contrast checks, and critique session synthesis.
