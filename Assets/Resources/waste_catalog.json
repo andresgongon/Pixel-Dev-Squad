@@ -1,0 +1,100 @@
+{
+  "items": [
+    {
+      "itemId": "botella_pet",
+      "displayName": "Botella Plástica PET",
+      "spriteName": "Botella",
+      "categoryIndex": 0,
+      "isTrapItem": false,
+      "pedagogicalHint": "¡Pista! Es un envase de plástico limpio y seco; si lo reciclamos, volverá a fundirse para crear nuevos productos."
+    },
+    {
+      "itemId": "caja_carton",
+      "displayName": "Caja de Cartón Limpia",
+      "spriteName": "Caja",
+      "categoryIndex": 0,
+      "isTrapItem": false,
+      "pedagogicalHint": "¡Pista! Este cartón está completamente seco y sin grasa; su fibra vegetal es 100% recuperable."
+    },
+    {
+      "itemId": "lata_aluminio",
+      "displayName": "Lata de Aluminio",
+      "spriteName": "Lata",
+      "categoryIndex": 0,
+      "isTrapItem": false,
+      "pedagogicalHint": "¡Pista! El metal limpio conserva su pureza y se puede fundir y reutilizar infinitas veces."
+    },
+    {
+      "itemId": "papel_limpio",
+      "displayName": "Papel Limpio Arrugado",
+      "spriteName": "Papel",
+      "categoryIndex": 0,
+      "isTrapItem": false,
+      "pedagogicalHint": "¡Pista! Aunque esté arrugado, el papel seco sin restos de comida ni manchas sigue siendo aprovechable."
+    },
+    {
+      "itemId": "cascara_banano",
+      "displayName": "Cáscara de Banano",
+      "spriteName": "Banana",
+      "categoryIndex": 1,
+      "isTrapItem": false,
+      "pedagogicalHint": "¡Pista! Es un residuo natural de origen vegetal; al descomponerse enriquece la tierra como abono."
+    },
+    {
+      "itemId": "restos_manzana",
+      "displayName": "Restos de Manzana",
+      "spriteName": "Manzana",
+      "categoryIndex": 1,
+      "isTrapItem": false,
+      "pedagogicalHint": "¡Pista! Los restos de fruta fresca son biodegradables y aportan nutrientes en el compostaje escolar."
+    },
+    {
+      "itemId": "cascara_naranja",
+      "displayName": "Cáscara de Naranja",
+      "spriteName": "Naranja",
+      "categoryIndex": 1,
+      "isTrapItem": false,
+      "pedagogicalHint": "¡Pista! La corteza cítrica es biodegradable; los microorganismos del suelo la transforman naturalmente."
+    },
+    {
+      "itemId": "servilleta_usada",
+      "displayName": "Servilleta Usada (Trampa)",
+      "spriteName": "Servilleta",
+      "categoryIndex": 2,
+      "isTrapItem": true,
+      "pedagogicalHint": "¡Pista! Aunque era de papel, la grasa de comida y fluidos corporales impiden que pueda reciclarse."
+    },
+    {
+      "itemId": "paquete_engrase",
+      "displayName": "Empaque Engrasado (Trampa)",
+      "spriteName": "Paquete",
+      "categoryIndex": 2,
+      "isTrapItem": true,
+      "pedagogicalHint": "¡Pista! El plástico metalizado sucio con restos de aceite arruina el lote de reciclaje; no se puede recuperar."
+    },
+    {
+      "itemId": "computador_raee",
+      "displayName": "Computador Dañado (RAEE)",
+      "spriteName": "Computador",
+      "categoryIndex": 3,
+      "isTrapItem": false,
+      "pedagogicalHint": "¡Pista! Los componentes electrónicos tienen metales pesados tóxicos; requieren entrega posconsumo diferenciada."
+    },
+    {
+      "itemId": "llanta_usada",
+      "displayName": "Llanta Usada Posconsumo",
+      "spriteName": "Llanta",
+      "categoryIndex": 3,
+      "isTrapItem": false,
+      "pedagogicalHint": "¡Pista! El caucho vulcanizado es un residuo voluminoso especial que no debe terminar en basureros comunes."
+    },
+    {
+      "itemId": "colchon_viejo",
+      "displayName": "Colchón Viejo Desechado",
+      "spriteName": "Colchon",
+      "categoryIndex": 3,
+      "isTrapItem": false,
+      "pedagogicalHint": "¡Pista! Los colchones y residuos de gran tamaño requieren rutas de recolección especial para no taponar los ríos."
+    }
+  ]
+}
