@@ -79,6 +79,12 @@ namespace RioLimpio
             }
         }
 
+        // Alias for PlayCorrectSound
+        public void PlaySuccessSound()
+        {
+            PlayCorrectSound();
+        }
+
         // Plays a soft water drop sound effect when the player selects the wrong bin
         public void PlayErrorSound()
         {

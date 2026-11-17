@@ -2,99 +2,99 @@
   "items": [
     {
       "itemId": "botella_pet",
-      "displayName": "Botella Plástica PET",
+      "displayName": "Botella Plástica PET Limpia",
       "spriteName": "Botella",
       "categoryIndex": 0,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Pista! Es un envase de plástico limpio y seco; si lo reciclamos, volverá a fundirse para crear nuevos productos."
+      "pedagogicalHint": "¡Aprovechable! Envase plástico limpio, seco y escurrido. Al no tener restos de comida ni aceites, se recicla en la caneca BLANCA [1]."
     },
     {
       "itemId": "caja_carton",
-      "displayName": "Caja de Cartón Limpia",
+      "displayName": "Caja de Cartón Seca y Limpia",
       "spriteName": "Caja",
       "categoryIndex": 0,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Pista! Este cartón está completamente seco y sin grasa; su fibra vegetal es 100% recuperable."
+      "pedagogicalHint": "¡Aprovechable! Cartón seco sin grasa ni humedad. Su fibra vegetal se recupera al 100% en la caneca BLANCA [1]."
     },
     {
       "itemId": "lata_aluminio",
-      "displayName": "Lata de Aluminio",
+      "displayName": "Lata de Bebida Limpia",
       "spriteName": "Lata",
       "categoryIndex": 0,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Pista! El metal limpio conserva su pureza y se puede fundir y reutilizar infinitas veces."
+      "pedagogicalHint": "¡Aprovechable! Los metales limpios se funden y reutilizan indefinidamente. Pertenece a la caneca BLANCA [1]."
     },
     {
       "itemId": "papel_limpio",
-      "displayName": "Papel Limpio Arrugado",
+      "displayName": "Papel de Archivo Seco",
       "spriteName": "Papel",
       "categoryIndex": 0,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Pista! Aunque esté arrugado, el papel seco sin restos de comida ni manchas sigue siendo aprovechable."
+      "pedagogicalHint": "¡Aprovechable! Hojas de papel secas y limpias sin pegamento ni restos biológicos. Van en la caneca BLANCA [1]."
     },
     {
       "itemId": "cascara_banano",
-      "displayName": "Cáscara de Banano",
+      "displayName": "Cáscara de Banano y Frutas",
       "spriteName": "Banana",
       "categoryIndex": 1,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Pista! Es un residuo natural de origen vegetal; al descomponerse enriquece la tierra como abono."
+      "pedagogicalHint": "¡Orgánico! Materia vegetal biodegradable ideal para compostaje escolar y abono natural en la caneca VERDE [2]."
     },
     {
       "itemId": "restos_manzana",
-      "displayName": "Restos de Manzana",
+      "displayName": "Corazón de Manzana y Poda",
       "spriteName": "Manzana",
       "categoryIndex": 1,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Pista! Los restos de fruta fresca son biodegradables y aportan nutrientes en el compostaje escolar."
+      "pedagogicalHint": "¡Orgánico! Desechos de comida cruda que se descomponen naturalmente y enriquecen la tierra en la caneca VERDE [2]."
     },
     {
       "itemId": "cascara_naranja",
-      "displayName": "Cáscara de Naranja",
+      "displayName": "Cortes de Cítricos y Verduras",
       "spriteName": "Naranja",
       "categoryIndex": 1,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Pista! La corteza cítrica es biodegradable; los microorganismos del suelo la transforman naturalmente."
+      "pedagogicalHint": "¡Orgánico! Biomasa natural biodegradable que aporta nutrientes al suelo sin contaminar en la caneca VERDE [2]."
     },
     {
       "itemId": "servilleta_usada",
-      "displayName": "Servilleta Usada (Trampa)",
+      "displayName": "Servilleta Usada con Grasa (Residuo Ambiguo)",
       "spriteName": "Servilleta",
       "categoryIndex": 2,
       "isTrapItem": true,
-      "pedagogicalHint": "¡Pista! Aunque era de papel, la grasa de comida y fluidos corporales impiden que pueda reciclarse."
+      "pedagogicalHint": "¡Atención: Residuo ambiguo! Aunque proviene del papel, al estar sucia con comida y fluidos arruina el lote de reciclaje. Va a la caneca NEGRA [3], ¡nunca en la blanca!"
     },
     {
       "itemId": "paquete_engrase",
-      "displayName": "Empaque Engrasado (Trampa)",
+      "displayName": "Empaque Grasoso / Vaso Encerado (Residuo Ambiguo)",
       "spriteName": "Paquete",
       "categoryIndex": 2,
       "isTrapItem": true,
-      "pedagogicalHint": "¡Pista! El plástico metalizado sucio con restos de aceite arruina el lote de reciclaje; no se puede recuperar."
+      "pedagogicalHint": "¡Atención: Residuo ambiguo! Parece cartón reciclable, pero la capa impermeable de polietileno o la grasa impiden su recuperación. Va a la caneca NEGRA [3]."
     },
     {
       "itemId": "computador_raee",
-      "displayName": "Computador Dañado (RAEE)",
+      "displayName": "Componentes Electrónicos RAEE (Residuo Peligroso)",
       "spriteName": "Computador",
       "categoryIndex": 3,
-      "isTrapItem": false,
-      "pedagogicalHint": "¡Pista! Los componentes electrónicos tienen metales pesados tóxicos; requieren entrega posconsumo diferenciada."
+      "isTrapItem": true,
+      "pedagogicalHint": "¡Peligro: Residuo especial! Los aparatos electrónicos contienen metales pesados tóxicos (plomo, cadmio). Requieren entrega posconsumo en la caneca ROJA [4]."
     },
     {
       "itemId": "llanta_usada",
-      "displayName": "Llanta Usada Posconsumo",
+      "displayName": "Llanta Usada Posconsumo (Residuo Especial)",
       "spriteName": "Llanta",
       "categoryIndex": 3,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Pista! El caucho vulcanizado es un residuo voluminoso especial que no debe terminar en basureros comunes."
+      "pedagogicalHint": "¡Manejo especial! El caucho vulcanizado es un residuo especial posconsumo de gran volumen. Requiere ruta diferenciada en la caneca ROJA [4]."
     },
     {
       "itemId": "colchon_viejo",
-      "displayName": "Colchón Viejo Desechado",
+      "displayName": "Colchón Viejo Desechado (Residuo Especial)",
       "spriteName": "Colchon",
       "categoryIndex": 3,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Pista! Los colchones y residuos de gran tamaño requieren rutas de recolección especial para no taponar los ríos."
+      "pedagogicalHint": "¡Manejo especial! Los muebles y colchones viejos son residuos voluminosos que taponan las fuentes hídricas. Van a la caneca ROJA [4] para recolección especial."
     }
   ]
 }

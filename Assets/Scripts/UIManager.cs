@@ -193,7 +193,7 @@ namespace RioLimpio
         }
 
         // Displays the starting mission intro and instructions modal
-        public void ShowStartMissionPanel(string playerName, bool showNameError = false)
+        public void ShowStartMissionPanel(string playerName, bool isTimeAttackMode = false, bool showNameError = false)
         {
             if (feedbackBubbleObject != null)
             {
@@ -203,7 +203,7 @@ namespace RioLimpio
             {
                 startMissionPanel.SetActive(true);
             }
-            RefreshStartMissionPanel(playerName, showNameError);
+            RefreshStartMissionPanel(playerName, isTimeAttackMode, showNameError);
         }
 
         // Hides start mission panel
@@ -216,7 +216,7 @@ namespace RioLimpio
         }
 
         // Live text refresh for the start mission panel
-        public void RefreshStartMissionPanel(string playerName, bool showNameError = false)
+        public void RefreshStartMissionPanel(string playerName, bool isTimeAttackMode = false, bool showNameError = false)
         {
             if (startMissionTitleText != null)
             {
@@ -229,23 +229,31 @@ namespace RioLimpio
                     ? "<color=#FFD966>[ Escribe tu nombre con el teclado_ ]</color>"
                     : $"<color=#6EFF8B>[ {playerName}_ ]</color>";
 
+                string modeDisplay = isTimeAttackMode
+                    ? "<color=#FFAA33>⚡ Modo Reto (Contrarreloj)</color>"
+                    : "<color=#55FF77>🌱 Modo Libre (Sin tiempo)</color>";
+
+                string modeDescription = isTimeAttackMode
+                    ? "<color=#FFD280>\"Pon a prueba tus conocimientos contra el reloj: ¡gana bonos de velocidad, encadena rachas multiplicadoras y compite por el récord en el Hall of Fame!\"</color>"
+                    : "<color=#99FFB3>\"Aprende la clasificación ambiental a tu propio ritmo: sin límite de tiempo, sin pérdida de vidas y con explicaciones de la guardiana para cada residuo.\"</color>";
+
                 string promptLine = showNameError
                     ? "<color=#FF5555>⚠ ¡OBLIGATORIO: ESCRIBE TU NOMBRE PARA COMENZAR! ⚠</color>"
-                    : "Escribe tu nombre, presiona [ENTER] o haz clic en ¡COMENZAR MISIÓN!";
+                    : "Presiona [TAB] para alternar modo  |  [ENTER] o clic en ¡COMENZAR MISIÓN!";
 
                 startMissionBodyText.text =
                     $"¡BIENVENIDO, GUARDIÁN AMBIENTAL!\n\n" +
-                    $"TU NOMBRE:  {nameDisplay}\n\n" +
+                    $"TU NOMBRE:  {nameDisplay}\n" +
+                    $"MODO: {modeDisplay}  <color=#CCCCCC>[Presiona TAB para cambiar]</color>\n" +
+                    $"{modeDescription}\n\n" +
                     $"────────────────────────────────────────\n" +
                     $"CÓDIGO DE COLORES (RESOLUCIÓN 2184 DE 2019):\n" +
-                    $"  [1] BLANCA: Aprovechables (botellas plásticas, cartón, vidrio, latas)\n" +
-                    $"  [2] VERDE:  Orgánicos (cáscaras de fruta, restos de comida, poda)\n" +
-                    $"  [3] NEGRA:  No aprovechables (servilletas usadas, papel higiénico, sucios)\n" +
-                    $"  [4] ROJA:   Peligrosos (pilas, medicamentos vencidos, bombillos, jeringas)\n" +
+                    $"  [1] BLANCA: Aprovechables (botellas limpias, cartón seco, vidrio, latas)\n" +
+                    $"  [2] VERDE:  Orgánicos (cáscaras de fruta, comida cruda, poda)\n" +
+                    $"  [3] NEGRA:  No aprovechables (servilletas, empaques grasosos, vasos encerados)\n" +
+                    $"  [4] ROJA:   Peligrosos y especiales (pilas, medicamentos, bombillos, RAEE)\n" +
                     $"────────────────────────────────────────\n" +
-                    $"REGLAS ARCADE Y CONTROLES:\n" +
-                    $"  ⚡ Arrastra, haz clic o usa teclas [1]-[4] antes que la barra llegue a rojo.\n" +
-                    $"  ❌ Errores o demoras restan -150 pts y 1 pez  |  🔊 Tecla [M]: Silenciar audio\n\n" +
+                    $"CONTROLES: Arrastra o usa teclas [1]-[4]  |  🔊 Tecla [M]: Silenciar audio\n\n" +
                     $"{promptLine}";
             }
         }
@@ -438,12 +446,13 @@ namespace RioLimpio
             string currentPlayerName,
             bool isEditingName,
             int plasticCount,
-            int organicCount)
+            int organicCount,
+            bool isTimeAttackMode = false)
         {
             if (endGamePanel == null) return;
 
             StartCoroutine(EndGameSequenceRoutine(
-                victory, totalClassified, finalScore, rankPosition, rankGrade, rankTitle, topEntries, currentPlayerName, isEditingName, plasticCount, organicCount));
+                victory, totalClassified, finalScore, rankPosition, rankGrade, rankTitle, topEntries, currentPlayerName, isEditingName, plasticCount, organicCount, isTimeAttackMode));
         }
 
         private IEnumerator EndGameSequenceRoutine(
@@ -457,18 +466,22 @@ namespace RioLimpio
             string currentPlayerName,
             bool isEditingName,
             int plasticCount,
-            int organicCount)
+            int organicCount,
+            bool isTimeAttackMode)
         {
             if (victory)
             {
                 UpdateRiverVisualState(1.0f);
-                ShowFeedbackBubble($"🎉 ¡MISIÓN CUMPLIDA! Puntaje final: {finalScore:N0} pts 💧🐟", true, 4.0f);
-                yield return new WaitForSeconds(3.5f);
+                string victoryMsg = isTimeAttackMode
+                    ? $"🎉 ¡MISIÓN CUMPLIDA! Puntaje final: {finalScore:N0} pts 💧🐟"
+                    : $"🎉 ¡MISIÓN EDUCATIVA COMPLETADA! Has limpiado el río 💧🐟";
+                ShowFeedbackBubble(victoryMsg, true, 4.0f);
+                yield return new WaitForSeconds(3.0f);
             }
 
             endGamePanel.SetActive(true);
             RefreshEndGamePanelText(
-                victory, totalClassified, finalScore, rankPosition, rankGrade, rankTitle, topEntries, currentPlayerName, isEditingName, plasticCount, organicCount);
+                victory, totalClassified, finalScore, rankPosition, rankGrade, rankTitle, topEntries, currentPlayerName, isEditingName, plasticCount, organicCount, isTimeAttackMode);
         }
 
         // Live refresh of end game text (used when player is typing their name)
@@ -483,11 +496,16 @@ namespace RioLimpio
             string currentPlayerName,
             bool isEditingName,
             int plasticCount,
-            int organicCount)
+            int organicCount,
+            bool isTimeAttackMode = false)
         {
             if (endGameTitleText != null)
             {
-                if (rankPosition == 1 && finalScore > 0)
+                if (!isTimeAttackMode)
+                {
+                    endGameTitleText.text = "🌿 ¡MISIÓN DE APRENDIZAJE COMPLETADA! 🌿";
+                }
+                else if (rankPosition == 1 && finalScore > 0)
                 {
                     endGameTitleText.text = "🏆 ¡NUEVO RÉCORD #1 DE LA ESTACIÓN! 🏆";
                 }
@@ -499,34 +517,53 @@ namespace RioLimpio
 
             if (endGameImpactSummaryText != null)
             {
-                string lbStr = "";
-                for (int i = 0; i < topEntries.Count && i < 3; i++)
-                {
-                    string medal = i == 0 ? "🥇" : (i == 1 ? "🥈" : "🥉");
-                    bool isThisSession = ((i + 1) == rankPosition);
-                    string youTag = isThisSession ? " ★ (Esta partida)" : "";
-                    string entryLabel = $"{topEntries[i].name}{youTag}";
-                    lbStr += $"  #{i + 1}  {entryLabel,-28}  —  {topEntries[i].score:N0} pts  {medal}\n";
-                }
-
-                string namePrompt = isEditingName
-                    ? $"▶ EDITANDO NOMBRE: [ {currentPlayerName}_ ]  (Escribe y presiona ENTER)\n"
-                    : $"TU NOMBRE REGISTRADO: [ {currentPlayerName} ]  (Presiona [N] para cambiar)\n";
-
                 int liters = totalClassified * 120;
 
-                endGameImpactSummaryText.text =
-                    $"⭐ TU PUNTAJE FINAL:  {finalScore:N0} pts  (Puesto #{rankPosition} en el Ranking)\n" +
-                    $"🎖 CALIFICACIÓN:      {rankGrade} - {rankTitle}\n\n" +
-                    $"────────────────────────────────────────\n" +
-                    $"     TABLA DE MEJORES PUNTAJES (HALL OF FAME)\n" +
-                    $"────────────────────────────────────────\n" +
-                    lbStr +
-                    $"────────────────────────────────────────\n" +
-                    namePrompt +
-                    $"────────────────────────────────────────\n" +
-                    $"• Residuos separados en fuente: {totalClassified} de 12  |  Agua protegida: ~{liters:N0} L\n\n" +
-                    $"Presiona [R] para reiniciar el nivel.";
+                if (!isTimeAttackMode)
+                {
+                    // Educational Mode: clean learning certificate without competitive Hall of Fame
+                    endGameImpactSummaryText.text =
+                        $"¡FELICITACIONES, {currentPlayerName.ToUpper()}!\n\n" +
+                        $"Has clasificado con éxito los {totalClassified} residuos bajo la Resolución 2184 de 2019:\n\n" +
+                        $"  • [1] BLANCA: Plásticos limpios, cartón seco, vidrio y latas de metal.\n" +
+                        $"  • [2] VERDE:  Cáscaras de frutas, comida cruda y restos de poda para abono.\n" +
+                        $"  • [3] NEGRA:  Servilletas sucias, cartón con grasa y empaques no reciclables.\n" +
+                        $"  • [4] ROJA:   Peligrosos y especiales (medicamentos, bombillos y pilas).\n\n" +
+                        $"────────────────────────────────────────\n" +
+                        $"💧 Impacto ecológico: Has protegido ~{liters:N0} litros de agua en el río.\n" +
+                        $"────────────────────────────────────────\n" +
+                        $"¿Quieres retar tu velocidad? Presiona [R] para reiniciar y activa el MODO RETO con [TAB].";
+                }
+                else
+                {
+                    // Reto Arcade Mode: full competitive Hall of Fame
+                    string lbStr = "";
+                    for (int i = 0; i < topEntries.Count && i < 3; i++)
+                    {
+                        string medal = i == 0 ? "🥇" : (i == 1 ? "🥈" : "🥉");
+                        bool isThisSession = ((i + 1) == rankPosition);
+                        string youTag = isThisSession ? " ★ (Esta partida)" : "";
+                        string entryLabel = $"{topEntries[i].name}{youTag}";
+                        lbStr += $"  #{i + 1}  {entryLabel,-28}  —  {topEntries[i].score:N0} pts  {medal}\n";
+                    }
+
+                    string namePrompt = isEditingName
+                        ? $"▶ EDITANDO NOMBRE: [ {currentPlayerName}_ ]  (Escribe y presiona ENTER)\n"
+                        : $"TU NOMBRE REGISTRADO: [ {currentPlayerName} ]  (Presiona [N] para cambiar)\n";
+
+                    endGameImpactSummaryText.text =
+                        $"⭐ TU PUNTAJE FINAL:  {finalScore:N0} pts  (Puesto #{rankPosition} en el Ranking)\n" +
+                        $"🎖 CALIFICACIÓN:      {rankGrade} - {rankTitle}\n\n" +
+                        $"────────────────────────────────────────\n" +
+                        $"     TABLA DE MEJORES PUNTAJES (HALL OF FAME)\n" +
+                        $"────────────────────────────────────────\n" +
+                        lbStr +
+                        $"────────────────────────────────────────\n" +
+                        namePrompt +
+                        $"────────────────────────────────────────\n" +
+                        $"• Residuos separados en fuente: {totalClassified} de 12  |  Agua protegida: ~{liters:N0} L\n\n" +
+                        $"Presiona [R] para reiniciar el nivel.";
+                }
             }
         }
     }

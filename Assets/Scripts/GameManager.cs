@@ -24,6 +24,7 @@ namespace RioLimpio
         public int currentLives = 3;
         public int currentStreak = 0;
         public bool isGameActive = false;
+        public bool isTimeAttackMode = false; // Default: Educational Mode (UDL compliant)
 
         [Header("Scene References")]
         public UIManager uiManager;
@@ -88,7 +89,7 @@ namespace RioLimpio
 
             if (uiManager != null)
             {
-                uiManager.ShowStartMissionPanel(currentPlayerName, false);
+                uiManager.ShowStartMissionPanel(currentPlayerName, isTimeAttackMode, false);
             }
         }
 
@@ -158,6 +159,20 @@ namespace RioLimpio
         // Live keyboard text capture for the initial Start Mission screen
         private void HandleStartScreenInput()
         {
+            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.T))
+            {
+                isTimeAttackMode = !isTimeAttackMode;
+                if (AudioManager.Instance != null)
+                {
+                    AudioManager.Instance.PlaySelectSound();
+                }
+                if (uiManager != null)
+                {
+                    uiManager.RefreshStartMissionPanel(currentPlayerName, isTimeAttackMode, false);
+                }
+                return;
+            }
+
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
             {
                 OnStartMissionConfirmed();
@@ -169,7 +184,7 @@ namespace RioLimpio
                 if (currentPlayerName.Length > 0)
                 {
                     currentPlayerName = currentPlayerName.Substring(0, currentPlayerName.Length - 1);
-                    if (uiManager != null) uiManager.RefreshStartMissionPanel(currentPlayerName, false);
+                    if (uiManager != null) uiManager.RefreshStartMissionPanel(currentPlayerName, isTimeAttackMode, false);
                 }
                 return;
             }
@@ -180,7 +195,7 @@ namespace RioLimpio
                 if (currentPlayerName.Length < 14 && (char.IsLetterOrDigit(c) || c == ' ' || c == '.'))
                 {
                     currentPlayerName += char.ToUpper(c);
-                    if (uiManager != null) uiManager.RefreshStartMissionPanel(currentPlayerName, false);
+                    if (uiManager != null) uiManager.RefreshStartMissionPanel(currentPlayerName, isTimeAttackMode, false);
                 }
             }
         }
@@ -197,7 +212,7 @@ namespace RioLimpio
                 }
                 if (uiManager != null)
                 {
-                    uiManager.RefreshStartMissionPanel(currentPlayerName, true);
+                    uiManager.RefreshStartMissionPanel(currentPlayerName, isTimeAttackMode, true);
                 }
                 return;
             }
@@ -288,9 +303,13 @@ namespace RioLimpio
                 {
                     foreach (var oldItem in wasteCatalog)
                     {
-                        if (oldItem != null && !string.IsNullOrEmpty(oldItem.itemId) && oldItem.itemSprite != null)
+                        if (oldItem != null && oldItem.itemSprite != null)
                         {
-                            spriteCache[oldItem.itemId] = oldItem.itemSprite;
+                            if (!string.IsNullOrEmpty(oldItem.itemId))
+                            {
+                                spriteCache[oldItem.itemId.ToLower()] = oldItem.itemSprite;
+                            }
+                            spriteCache[oldItem.itemSprite.name.ToLower()] = oldItem.itemSprite;
                         }
                     }
                 }
@@ -299,9 +318,20 @@ namespace RioLimpio
                 foreach (var config in catalogData.items)
                 {
                     Sprite sprite = null;
-                    if (spriteCache.ContainsKey(config.itemId))
+                    string keyId = config.itemId != null ? config.itemId.ToLower() : "";
+                    string keySprite = config.spriteName != null ? config.spriteName.ToLower() : "";
+
+                    if (!string.IsNullOrEmpty(keyId) && spriteCache.ContainsKey(keyId))
                     {
-                        sprite = spriteCache[config.itemId];
+                        sprite = spriteCache[keyId];
+                    }
+                    else if (!string.IsNullOrEmpty(keySprite) && spriteCache.ContainsKey(keySprite))
+                    {
+                        sprite = spriteCache[keySprite];
+                    }
+                    else if (!string.IsNullOrEmpty(config.spriteName))
+                    {
+                        sprite = Resources.Load<Sprite>("Sprites/WasteItems/" + config.spriteName);
                     }
 
                     BinCategory category = (BinCategory)config.categoryIndex;
@@ -361,6 +391,15 @@ namespace RioLimpio
 
             ReshuffleCatalog();
 
+            if (inspectionMachine == null && activeWasteItem != null)
+            {
+                inspectionMachine = activeWasteItem.GetComponent<WasteInspectionMachine>();
+            }
+            if (inspectionMachine != null)
+            {
+                inspectionMachine.SetTimeAttackMode(isTimeAttackMode);
+            }
+
             if (uiManager != null)
             {
                 if (uiManager.endGamePanel != null)
@@ -371,7 +410,15 @@ namespace RioLimpio
                 uiManager.UpdateProgressHUD(currentClassifiedCount, totalWasteTarget);
                 uiManager.UpdateScoreHUD(currentScore, currentStreak);
                 uiManager.UpdateLivesHUD(currentLives, activeFishSprite, lostFishSprite);
-                uiManager.ShowFeedbackBubble("¡CLASIFICA RÁPIDO PARA MULTIPLICAR PUNTOS Y LOGRAR EL RÉCORD! 🏆", true, 3.5f);
+
+                if (isTimeAttackMode)
+                {
+                    uiManager.ShowFeedbackBubble("⚡ ¡MODO RETO: Clasifica rápido para multiplicar puntos y lograr el récord! 🏆", true, 4.0f);
+                }
+                else
+                {
+                    uiManager.ShowFeedbackBubble("🌱 ¡MODO EDUCATIVO: Tómate tu tiempo para clasificar y aprender sin prisa! 🌎", true, 4.0f);
+                }
             }
 
             SpawnNextWasteItem();
@@ -422,6 +469,10 @@ namespace RioLimpio
             {
                 inspectionMachine = activeWasteItem.GetComponent<WasteInspectionMachine>();
             }
+            if (inspectionMachine != null)
+            {
+                inspectionMachine.SetTimeAttackMode(isTimeAttackMode);
+            }
         }
 
         // Called when player clicks on a bin directly (Click-to-Click mode)
@@ -469,27 +520,41 @@ namespace RioLimpio
             currentStreak++;
             currentClassifiedCount = Mathf.Min(totalWasteTarget, currentClassifiedCount + 1);
 
-            // Calculate Speed Bonus (the faster you sort, the higher the score!)
-            float remainingTime = inspectionMachine != null ? inspectionMachine.GetRemainingTime() : 0f;
-            int speedBonus = Mathf.RoundToInt(remainingTime * 35f);
+            // Calculate Speed Bonus (only in Time-Attack mode; in Educational mode focus on learning accuracy)
+            int speedBonus = 0;
+            if (isTimeAttackMode && inspectionMachine != null)
+            {
+                float remainingTime = inspectionMachine.GetRemainingTime();
+                speedBonus = Mathf.RoundToInt(remainingTime * 35f);
+            }
 
             // Combo Streak Multiplier
             float streakMultiplier = 1.0f;
             string streakTag = "";
-            if (currentStreak >= 4)
+            if (isTimeAttackMode)
             {
-                streakMultiplier = 2.0f;
-                streakTag = "ULTRA FRENESÍ x2.0 🔥";
+                if (currentStreak >= 4)
+                {
+                    streakMultiplier = 2.0f;
+                    streakTag = "ULTRA FRENESÍ x2.0 🔥";
+                }
+                else if (currentStreak == 3)
+                {
+                    streakMultiplier = 1.5f;
+                    streakTag = "MODO FRENESÍ x1.5 🔥";
+                }
+                else if (currentStreak == 2)
+                {
+                    streakMultiplier = 1.25f;
+                    streakTag = "Racha x1.25";
+                }
             }
-            else if (currentStreak == 3)
+            else
             {
-                streakMultiplier = 1.5f;
-                streakTag = "MODO FRENESÍ x1.5 🔥";
-            }
-            else if (currentStreak == 2)
-            {
-                streakMultiplier = 1.25f;
-                streakTag = "Racha x1.25";
+                if (currentStreak >= 3)
+                {
+                    streakTag = $"¡{currentStreak} Aciertos Seguidos! ⭐";
+                }
             }
 
             int earnedPoints = Mathf.RoundToInt((basePointsPerItem + speedBonus) * streakMultiplier);
@@ -523,18 +588,30 @@ namespace RioLimpio
                 Vector2 popupPos = selectedBin != null ? selectedBin.GetCanvasPosition() : wasteSpawnPosition;
                 uiManager.ShowFloatingScoreVFX(popupText, true, popupPos);
 
-                string bonusDetail = speedBonus > 100 ? "¡Súper Veloz!" : "¡A tiempo!";
-                if (!string.IsNullOrEmpty(streakTag))
+                if (isTimeAttackMode)
                 {
-                    uiManager.ShowFeedbackBubble($"¡+{earnedPoints} PTS! ({bonusDetail} | {streakTag}) ✔", true, 2.0f);
-                }
-                else if (item.isTrapItem)
-                {
-                    uiManager.ShowFeedbackBubble($"¡+{earnedPoints} PTS! ¡Excelente! No caíste en la trampa: va en la negra ✔", true, 2.2f);
+                    string bonusDetail = speedBonus > 100 ? "¡Súper Veloz!" : "¡A tiempo!";
+                    if (!string.IsNullOrEmpty(streakTag))
+                    {
+                        uiManager.ShowFeedbackBubble($"¡+{earnedPoints} PTS! ({bonusDetail} | {streakTag}) ✔", true, 2.0f);
+                    }
+                    else if (item.isTrapItem)
+                    {
+                        uiManager.ShowFeedbackBubble($"¡+{earnedPoints} PTS! ¡Excelente! No caíste en la trampa: va en la negra ✔", true, 2.2f);
+                    }
+                    else
+                    {
+                        uiManager.ShowFeedbackBubble($"¡+{earnedPoints} PTS! (Velocidad: +{speedBonus}) ✔", true, 1.8f);
+                    }
                 }
                 else
                 {
-                    uiManager.ShowFeedbackBubble($"¡+{earnedPoints} PTS! (Velocidad: +{speedBonus}) ✔", true, 1.8f);
+                    // Educational Mode: short, warm, pedagogical confirmation without speed references
+                    string binName = selectedBin != null ? selectedBin.binNameText : "la caneca correcta";
+                    string positiveMsg = item.isTrapItem
+                        ? $"¡Correcto! {item.displayName} va en {binName}: no se recicla por grasa/humedad ✔"
+                        : $"¡Muy bien! {item.displayName} va en {binName} ✔";
+                    uiManager.ShowFeedbackBubble(positiveMsg, true, 2.5f);
                 }
             }
 
@@ -548,12 +625,20 @@ namespace RioLimpio
             }
         }
 
-        // Error handling: penalty points (-150), breaks streak, reduces life, gives pedagogical hint
+        // Error handling: penalty points, breaks streak, reduces life (in Time-Attack), gives pedagogical hint
         private void HandleWrongClassification(RecyclingBin selectedBin, WasteItemData item)
         {
             currentStreak = 0;
-            currentLives = Mathf.Max(0, currentLives - 1);
-            currentScore = Mathf.Max(0, currentScore - penaltyPointsPerError);
+            if (isTimeAttackMode)
+            {
+                currentLives = Mathf.Max(0, currentLives - 1);
+                currentScore = Mathf.Max(0, currentScore - penaltyPointsPerError);
+            }
+            else
+            {
+                // In Educational mode, do not deduct lives so children can finish all 12 items without stress (UDL)
+                currentScore = Mathf.Max(0, currentScore - 25);
+            }
 
             if (shufflePointer > 0 && shufflePointer - 1 < shuffledIndices.Count)
             {
@@ -577,12 +662,14 @@ namespace RioLimpio
                 uiManager.SetGuardianReaction(false);
 
                 Vector2 popupPos = selectedBin != null ? selectedBin.GetCanvasPosition() : wasteSpawnPosition;
-                uiManager.ShowFloatingScoreVFX($"-{penaltyPointsPerError} PTS ✖", false, popupPos);
+                string penaltyTag = isTimeAttackMode ? $"-{penaltyPointsPerError} PTS ✖" : "-25 PTS ✖";
+                uiManager.ShowFloatingScoreVFX(penaltyTag, false, popupPos);
 
-                uiManager.ShowFeedbackBubble($"¡-{penaltyPointsPerError} PTS! (Error de caneca) ✖\n{item.pedagogicalHint}", false, 3.8f);
+                string penaltyMsg = isTimeAttackMode ? $"¡-{penaltyPointsPerError} PTS! (Error de caneca) ✖\n" : "¡Cuidado! ";
+                uiManager.ShowFeedbackBubble($"{penaltyMsg}{item.pedagogicalHint}", false, 4.0f);
             }
 
-            if (currentLives <= 0)
+            if (isTimeAttackMode && currentLives <= 0)
             {
                 EndSession(false);
             }
@@ -592,10 +679,10 @@ namespace RioLimpio
             }
         }
 
-        // Called when inspection timer expires without sorting (Timeout Penalty)
+        // Called when inspection timer expires without sorting (Timeout Penalty - only active in Time-Attack mode)
         public void OnInspectionTimeout()
         {
-            if (!isGameActive) return;
+            if (!isGameActive || !isTimeAttackMode) return;
 
             currentStreak = 0;
             currentLives = Mathf.Max(0, currentLives - 1);
@@ -707,28 +794,31 @@ namespace RioLimpio
                 activeWasteItem.gameObject.SetActive(false);
             }
 
-            RecomputeLeaderboard(false);
+            if (isTimeAttackMode)
+            {
+                RecomputeLeaderboard(false);
 
-            // Calculate Performance Rank
-            if (currentScore >= 2600)
-            {
-                playerRankGrade = "RANGO S";
-                playerRankTitle = "Guardián Supremo del Río 🌟🏆";
-            }
-            else if (currentScore >= 1900)
-            {
-                playerRankGrade = "RANGO A";
-                playerRankTitle = "Protector Ecológico Experto 🥇";
-            }
-            else if (currentScore >= 1300)
-            {
-                playerRankGrade = "RANGO B";
-                playerRankTitle = "Guardián en Entrenamiento 🥈";
-            }
-            else
-            {
-                playerRankGrade = "RANGO C";
-                playerRankTitle = "Voluntario Novato 🥉";
+                // Calculate Performance Rank
+                if (currentScore >= 2600)
+                {
+                    playerRankGrade = "RANGO S";
+                    playerRankTitle = "Guardián Supremo del Río 🌟🏆";
+                }
+                else if (currentScore >= 1900)
+                {
+                    playerRankGrade = "RANGO A";
+                    playerRankTitle = "Protector Ecológico Experto 🥇";
+                }
+                else if (currentScore >= 1300)
+                {
+                    playerRankGrade = "RANGO B";
+                    playerRankTitle = "Guardián en Entrenamiento 🥈";
+                }
+                else
+                {
+                    playerRankGrade = "RANGO C";
+                    playerRankTitle = "Voluntario Novato 🥉";
+                }
             }
 
             if (uiManager != null)
@@ -744,7 +834,8 @@ namespace RioLimpio
                     currentPlayerName,
                     isEditingName,
                     plasticRecoveredCount,
-                    organicRecoveredCount
+                    organicRecoveredCount,
+                    isTimeAttackMode
                 );
             }
         }
@@ -764,7 +855,8 @@ namespace RioLimpio
                     currentPlayerName,
                     isEditingName,
                     plasticRecoveredCount,
-                    organicRecoveredCount
+                    organicRecoveredCount,
+                    isTimeAttackMode
                 );
             }
         }

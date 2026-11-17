@@ -11,6 +11,7 @@ namespace RioLimpio
         public BinCategory binCategory;
         public string binTitle = "APROVECHABLES";
         public int shortcutKeyNumber = 1;
+        public string binNameText => $"[{shortcutKeyNumber}] {binTitle}";
 
         [Header("Visual Feedback References (Rol 2 & Rol 3)")]
         public Image binSpriteImage;
