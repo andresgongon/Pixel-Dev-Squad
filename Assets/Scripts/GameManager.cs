@@ -124,6 +124,17 @@ namespace RioLimpio
                     return;
                 }
 
+                if (Input.GetKeyDown(KeyCode.Tab))
+                {
+                    isTimeAttackMode = !isTimeAttackMode;
+                    if (AudioManager.Instance != null)
+                    {
+                        AudioManager.Instance.PlaySelectSound();
+                    }
+                    StartNewGame();
+                    return;
+                }
+
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     StartNewGame();
@@ -159,7 +170,7 @@ namespace RioLimpio
         // Live keyboard text capture for the initial Start Mission screen
         private void HandleStartScreenInput()
         {
-            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
                 isTimeAttackMode = !isTimeAttackMode;
                 if (AudioManager.Instance != null)
@@ -191,7 +202,7 @@ namespace RioLimpio
 
             foreach (char c in Input.inputString)
             {
-                if (c == '\b' || c == '\n' || c == '\r') continue;
+                if (c == '\b' || c == '\n' || c == '\r' || c == '\t') continue;
                 if (currentPlayerName.Length < 14 && (char.IsLetterOrDigit(c) || c == ' ' || c == '.'))
                 {
                     currentPlayerName += char.ToUpper(c);

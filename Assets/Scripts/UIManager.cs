@@ -532,7 +532,7 @@ namespace RioLimpio
                         $"────────────────────────────────────────\n" +
                         $"💧 Impacto ecológico: Has protegido ~{liters:N0} litros de agua en el río.\n" +
                         $"────────────────────────────────────────\n" +
-                        $"¿Quieres retar tu velocidad? Presiona [R] para reiniciar y activa el MODO RETO con [TAB].";
+                        $"¿Quieres retar tu velocidad? Presiona [TAB] para jugar en MODO RETO o [R] para repetir.";
                 }
                 else
                 {
