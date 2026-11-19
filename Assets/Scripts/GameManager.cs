@@ -597,7 +597,8 @@ namespace RioLimpio
                     }
                     else if (item.isTrapItem)
                     {
-                        uiManager.ShowFeedbackBubble($"¡+{earnedPoints} PTS! ¡Excelente! No caíste en la trampa: va en la negra ✔", true, 2.2f);
+                        string binName = selectedBin != null ? selectedBin.binNameText : "la caneca correcta";
+                        uiManager.ShowFeedbackBubble($"¡+{earnedPoints} PTS! ¡Excelente ojo! Va en {binName} ✔", true, 2.2f);
                     }
                     else
                     {
@@ -609,7 +610,7 @@ namespace RioLimpio
                     // Educational Mode: short, warm, pedagogical confirmation without speed references
                     string binName = selectedBin != null ? selectedBin.binNameText : "la caneca correcta";
                     string positiveMsg = item.isTrapItem
-                        ? $"¡Correcto! {item.displayName} va en {binName}: no se recicla por grasa/humedad ✔"
+                        ? $"¡Bien pensado! {item.displayName} va en {binName} ✔"
                         : $"¡Muy bien! {item.displayName} va en {binName} ✔";
                     uiManager.ShowFeedbackBubble(positiveMsg, true, 2.5f);
                 }
@@ -636,7 +637,7 @@ namespace RioLimpio
             }
             else
             {
-                // In Educational mode, do not deduct lives so children can finish all 12 items without stress (UDL)
+                // In Educational mode, do not deduct lives so children can finish all items without stress (UDL)
                 currentScore = Mathf.Max(0, currentScore - 25);
             }
 

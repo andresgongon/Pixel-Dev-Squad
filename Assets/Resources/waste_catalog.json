@@ -6,7 +6,7 @@
       "spriteName": "Botella",
       "categoryIndex": 0,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Aprovechable! Envase plástico limpio, seco y escurrido. Al no tener restos de comida ni aceites, se recicla en la caneca BLANCA [1]."
+      "pedagogicalHint": "¡Aprovechable! Envase plástico limpio, seco y escurrido. Se recicla en la caneca BLANCA [1]."
     },
     {
       "itemId": "caja_carton",
@@ -14,15 +14,15 @@
       "spriteName": "Caja",
       "categoryIndex": 0,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Aprovechable! Cartón seco sin grasa ni humedad. Su fibra vegetal se recupera al 100% en la caneca BLANCA [1]."
+      "pedagogicalHint": "¡Aprovechable! Cartón seco sin grasa ni humedad. Su fibra se recupera en la caneca BLANCA [1]."
     },
     {
       "itemId": "lata_aluminio",
-      "displayName": "Lata de Bebida Limpia",
+      "displayName": "Lata de Aluminio Limpia",
       "spriteName": "Lata",
       "categoryIndex": 0,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Aprovechable! Los metales limpios se funden y reutilizan indefinidamente. Pertenece a la caneca BLANCA [1]."
+      "pedagogicalHint": "¡Aprovechable! Los metales limpios se funden y reutilizan indefinidamente en la caneca BLANCA [1]."
     },
     {
       "itemId": "papel_limpio",
@@ -30,7 +30,15 @@
       "spriteName": "Papel",
       "categoryIndex": 0,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Aprovechable! Hojas de papel secas y limpias sin pegamento ni restos biológicos. Van en la caneca BLANCA [1]."
+      "pedagogicalHint": "¡Aprovechable! Hojas de papel secas y limpias sin restos biológicos. Van en la caneca BLANCA [1]."
+    },
+    {
+      "itemId": "tetrapak_limpio",
+      "displayName": "Envase Tetra Pak Escurrido",
+      "spriteName": "Tetrapak",
+      "categoryIndex": 0,
+      "isTrapItem": true,
+      "pedagogicalHint": "¡Buen dato! Aunque combina cartón, plástico y aluminio, en Colombia se recupera limpio y seco en la caneca BLANCA [1]."
     },
     {
       "itemId": "cascara_banano",
@@ -38,63 +46,119 @@
       "spriteName": "Banana",
       "categoryIndex": 1,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Orgánico! Materia vegetal biodegradable ideal para compostaje escolar y abono natural en la caneca VERDE [2]."
+      "pedagogicalHint": "¡Orgánico! Materia vegetal biodegradable ideal para compostaje y abono natural en la caneca VERDE [2]."
     },
     {
       "itemId": "restos_manzana",
-      "displayName": "Corazón de Manzana y Poda",
+      "displayName": "Corazón y Restos de Manzana",
       "spriteName": "Manzana",
       "categoryIndex": 1,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Orgánico! Desechos de comida cruda que se descomponen naturalmente y enriquecen la tierra en la caneca VERDE [2]."
+      "pedagogicalHint": "¡Orgánico! Desechos de comida cruda que se descomponen y enriquecen la tierra en la caneca VERDE [2]."
     },
     {
       "itemId": "cascara_naranja",
-      "displayName": "Cortes de Cítricos y Verduras",
+      "displayName": "Cáscaras de Cítricos y Verduras",
       "spriteName": "Naranja",
       "categoryIndex": 1,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Orgánico! Biomasa natural biodegradable que aporta nutrientes al suelo sin contaminar en la caneca VERDE [2]."
+      "pedagogicalHint": "¡Orgánico! Biomasa vegetal natural que aporta nutrientes al suelo sin contaminar en la caneca VERDE [2]."
+    },
+    {
+      "itemId": "hojas_poda",
+      "displayName": "Hojas Secas y Poda de Jardín",
+      "spriteName": "Hojas_Poda",
+      "categoryIndex": 1,
+      "isTrapItem": false,
+      "pedagogicalHint": "¡Orgánico! Los restos vegetales de poda y jardinería son base clave para compostaje en la caneca VERDE [2]."
+    },
+    {
+      "itemId": "bolsita_te",
+      "displayName": "Bolsita de Té Usada",
+      "spriteName": "Bolsita_Té",
+      "categoryIndex": 1,
+      "isTrapItem": true,
+      "pedagogicalHint": "¡Buen dato! Las hojas de té y su filtro natural (sin grapa metálica) son compostables en la caneca VERDE [2]."
     },
     {
       "itemId": "servilleta_usada",
-      "displayName": "Servilleta Usada con Grasa (Residuo Ambiguo)",
+      "displayName": "Servilleta Usada con Grasa",
       "spriteName": "Servilleta",
       "categoryIndex": 2,
       "isTrapItem": true,
-      "pedagogicalHint": "¡Atención: Residuo ambiguo! Aunque proviene del papel, al estar sucia con comida y fluidos arruina el lote de reciclaje. Va a la caneca NEGRA [3], ¡nunca en la blanca!"
+      "pedagogicalHint": "¡Cuidado! Aunque viene del papel, la grasa y fluidos impiden reciclarla. Va en la caneca NEGRA [3]."
     },
     {
       "itemId": "paquete_engrase",
-      "displayName": "Empaque Grasoso / Vaso Encerado (Residuo Ambiguo)",
+      "displayName": "Paquete Metalizado de Snacks",
       "spriteName": "Paquete",
       "categoryIndex": 2,
       "isTrapItem": true,
-      "pedagogicalHint": "¡Atención: Residuo ambiguo! Parece cartón reciclable, pero la capa impermeable de polietileno o la grasa impiden su recuperación. Va a la caneca NEGRA [3]."
+      "pedagogicalHint": "¡Ojo! Parece aluminio, pero es plástico metalizado (BOPP) con aceite y sal. Va en la caneca NEGRA [3]."
     },
     {
-      "itemId": "computador_raee",
-      "displayName": "Componentes Electrónicos RAEE (Residuo Peligroso)",
-      "spriteName": "Computador",
+      "itemId": "caja_pizza_grasosa",
+      "displayName": "Caja de Pizza con Grasa",
+      "spriteName": "Caja_Pizza",
+      "categoryIndex": 2,
+      "isTrapItem": true,
+      "pedagogicalHint": "¡Cuidado! El cartón manchado con queso y aceite contamina el papel limpio. Va en la caneca NEGRA [3]."
+    },
+    {
+      "itemId": "vaso_cafe_encerado",
+      "displayName": "Vaso Encerado de Café",
+      "spriteName": "Vaso_Cafe",
+      "categoryIndex": 2,
+      "isTrapItem": true,
+      "pedagogicalHint": "¡Ojo! Parece cartón, pero tiene una película plástica impermeable y manchas de bebida. Va en la caneca NEGRA [3]."
+    },
+    {
+      "itemId": "recibo_termico",
+      "displayName": "Factura / Recibo Térmico",
+      "spriteName": "Recibo_Papel",
+      "categoryIndex": 2,
+      "isTrapItem": true,
+      "pedagogicalHint": "¡Cuidado! El papel térmico de cajeros contiene recubrimiento químico (BPA) no reciclable. Va en la caneca NEGRA [3]."
+    },
+    {
+      "itemId": "pilas_gastadas",
+      "displayName": "Pilas Alcalinas Agotadas",
+      "spriteName": "Pilas",
+      "categoryIndex": 3,
+      "isTrapItem": false,
+      "pedagogicalHint": "¡Peligroso posconsumo! Contienen metales pesados tóxicos (mercurio, litio, cadmio). Van en la caneca ROJA [4] (Pilas con el Ambiente)."
+    },
+    {
+      "itemId": "bombillo_ahorrador",
+      "displayName": "Bombillo Ahorrador Fundido",
+      "spriteName": "Bombillo",
       "categoryIndex": 3,
       "isTrapItem": true,
-      "pedagogicalHint": "¡Peligro: Residuo especial! Los aparatos electrónicos contienen metales pesados tóxicos (plomo, cadmio). Requieren entrega posconsumo en la caneca ROJA [4]."
+      "pedagogicalHint": "¡Peligro! Aunque tiene vidrio, contiene vapor de mercurio tóxico. Requiere entrega en la caneca ROJA [4] (Lúmina)."
     },
     {
-      "itemId": "llanta_usada",
-      "displayName": "Llanta Usada Posconsumo (Residuo Especial)",
-      "spriteName": "Llanta",
+      "itemId": "medicamentos_vencidos",
+      "displayName": "Medicamentos Vencidos / Blíster",
+      "spriteName": "Medicamentos",
       "categoryIndex": 3,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Manejo especial! El caucho vulcanizado es un residuo especial posconsumo de gran volumen. Requiere ruta diferenciada en la caneca ROJA [4]."
+      "pedagogicalHint": "¡Peligroso posconsumo! Los fármacos contaminan el agua y afectan la fauna del río. Van en la caneca ROJA [4] (Punto Azul)."
     },
     {
-      "itemId": "colchon_viejo",
-      "displayName": "Colchón Viejo Desechado (Residuo Especial)",
-      "spriteName": "Colchon",
+      "itemId": "celular_raee",
+      "displayName": "Celular Dañado",
+      "spriteName": "Celular",
       "categoryIndex": 3,
       "isTrapItem": false,
-      "pedagogicalHint": "¡Manejo especial! Los muebles y colchones viejos son residuos voluminosos que taponan las fuentes hídricas. Van a la caneca ROJA [4] para recolección especial."
+      "pedagogicalHint": "¡Residuo electrónico RAEE! Contiene batería y metales tóxicos; requiere recolección especial en la caneca ROJA [4]."
+    },
+    {
+      "itemId": "aerosol_quimico",
+      "displayName": "Aerosol / Insecticida Gastado",
+      "spriteName": "Aerosol",
+      "categoryIndex": 3,
+      "isTrapItem": true,
+      "pedagogicalHint": "¡Peligro! Aunque su envase es metálico, guarda restos químicos e inflamables a presión. Va en la caneca ROJA [4]."
     }
   ]
 }

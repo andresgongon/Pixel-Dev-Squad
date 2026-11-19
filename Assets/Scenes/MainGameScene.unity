@@ -1631,7 +1631,7 @@ RectTransform:
   - {fileID: 1751}
   - {fileID: 1771}
   m_Father: {fileID: 1001}
-  m_AnchoredPosition: {x: 110, y: -190}
+  m_AnchoredPosition: {x: 110, y: -175}
   m_SizeDelta: {x: 950, y: 260}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1780,7 +1780,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1711}
-  m_AnchoredPosition: {x: 0, y: -85}
+  m_AnchoredPosition: {x: 0, y: -142}
   m_SizeDelta: {x: 155, y: 32}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1983,7 +1983,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1731}
-  m_AnchoredPosition: {x: 0, y: -85}
+  m_AnchoredPosition: {x: 0, y: -142}
   m_SizeDelta: {x: 155, y: 32}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2186,7 +2186,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1751}
-  m_AnchoredPosition: {x: 0, y: -85}
+  m_AnchoredPosition: {x: 0, y: -142}
   m_SizeDelta: {x: 155, y: 32}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2389,7 +2389,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1771}
-  m_AnchoredPosition: {x: 0, y: -85}
+  m_AnchoredPosition: {x: 0, y: -142}
   m_SizeDelta: {x: 155, y: 32}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2484,7 +2484,7 @@ RectTransform:
   - {fileID: 1811}
   - {fileID: 1821}
   m_Father: {fileID: 1001}
-  m_AnchoredPosition: {x: -160, y: 25}
+  m_AnchoredPosition: {x: -160, y: 52}
   m_SizeDelta: {x: 165, y: 165}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2590,7 +2590,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1801}
-  m_AnchoredPosition: {x: 0, y: -82}
+  m_AnchoredPosition: {x: 0, y: -80}
   m_SizeDelta: {x: 240, y: 36}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2664,7 +2664,7 @@ RectTransform:
   m_Children: 
   - {fileID: 1831}
   m_Father: {fileID: 1801}
-  m_AnchoredPosition: {x: 0, y: 92}
+  m_AnchoredPosition: {x: 0, y: 78}
   m_SizeDelta: {x: 172, y: 20}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3535,79 +3535,127 @@ MonoBehaviour:
   - {fileID: 1734}
   - {fileID: 1754}
   - {fileID: 1774}
-  wasteSpawnPosition: {x: -160, y: 25}
+  wasteSpawnPosition: {x: -160, y: 52}
   activeFishSprite: {fileID: 21300000, guid: ea000000000000800000000000000002, type: 3}
   lostFishSprite: {fileID: 21300000, guid: ea000000000000800000000000000003, type: 3}
   wasteCatalog:
   - itemId: "botella_pet"
-    displayName: "Botella Plástica PET"
+    displayName: "Botella Plástica PET Limpia"
     itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000001, type: 3}
     correctCategory: 0
     isTrapItem: 0
-    pedagogicalHint: "¡Pista! Las botellas plásticas limpias y vacías son aprovechables: van en la caneca AZUL [1]." 
-  - itemId: "cascara_banano"
-    displayName: "Cáscara de Banano"
-    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000002, type: 3}
-    correctCategory: 2
-    isTrapItem: 0
-    pedagogicalHint: "¡Pista! Las cáscaras de fruta son residuos orgánicos biodegradables: van en la caneca VERDE [3]." 
-  - itemId: "paquete_engrase"
-    displayName: "Empaque Engrasado (Trampa)"
-    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000003, type: 3}
-    correctCategory: 3
-    isTrapItem: 1
-    pedagogicalHint: "¡Cuidado! Este empaque tiene manchas de grasa y comida, por eso NO es reciclable: va en la GRIS [4]." 
-  - itemId: "computador_raee"
-    displayName: "Computador Dañado (RAEE)"
-    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000004, type: 3}
-    correctCategory: 1
-    isTrapItem: 0
-    pedagogicalHint: "¡Pista! Los aparatos electrónicos dañados (RAEE) requieren manejo especial en la caneca ROJA [2]." 
+    pedagogicalHint: "¡Aprovechable! Envase plástico limpio, seco y escurrido. Se recicla en la caneca BLANCA [1]."
   - itemId: "caja_carton"
-    displayName: "Caja de Cartón Limpia"
+    displayName: "Caja de Cartón Seca y Limpia"
     itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000005, type: 3}
     correctCategory: 0
     isTrapItem: 0
-    pedagogicalHint: "¡Pista! El cartón limpio, seco y sin restos de grasa es 100% reciclable: va en la caneca AZUL [1]." 
-  - itemId: "restos_manzana"
-    displayName: "Restos de Manzana"
-    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000006, type: 3}
-    correctCategory: 2
-    isTrapItem: 0
-    pedagogicalHint: "¡Pista! Los corazones y restos de manzana sirven para compostaje en la caneca VERDE [3]." 
-  - itemId: "servilleta_usada"
-    displayName: "Servilleta Usada (Trampa)"
-    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000007, type: 3}
-    correctCategory: 3
-    isTrapItem: 1
-    pedagogicalHint: "¡Ojo! Aunque viene del papel, la servilleta sucia o engrasada pierde su reciclabilidad: va en la GRIS [4]." 
-  - itemId: "llanta_usada"
-    displayName: "Llanta Usada Posconsumo"
-    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000008, type: 3}
-    correctCategory: 1
-    isTrapItem: 0
-    pedagogicalHint: "¡Pista! Las llantas son residuos especiales posconsumo y no van en la basura común: caneca ROJA [2]." 
+    pedagogicalHint: "¡Aprovechable! Cartón seco sin grasa ni humedad. Su fibra se recupera en la caneca BLANCA [1]."
   - itemId: "lata_aluminio"
-    displayName: "Lata de Aluminio"
+    displayName: "Lata de Aluminio Limpia"
     itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000009, type: 3}
     correctCategory: 0
     isTrapItem: 0
-    pedagogicalHint: "¡Pista! Las latas de aluminio limpias se funden y aprovechan de nuevo: van en la caneca AZUL [1]." 
-  - itemId: "cascara_naranja"
-    displayName: "Cáscara de Naranja"
-    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000010, type: 3}
-    correctCategory: 2
-    isTrapItem: 0
-    pedagogicalHint: "¡Pista! Los restos cítricos y cáscaras naturales son orgánicos: van en la caneca VERDE [3]." 
+    pedagogicalHint: "¡Aprovechable! Los metales limpios se funden y reutilizan indefinidamente en la caneca BLANCA [1]."
   - itemId: "papel_limpio"
-    displayName: "Papel Limpio Arrugado"
+    displayName: "Papel de Archivo Seco"
     itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000011, type: 3}
     correctCategory: 0
     isTrapItem: 0
-    pedagogicalHint: "¡Pista! El papel blanco limpio (así esté arrugado) sí es aprovechable: va en la caneca AZUL [1]." 
-  - itemId: "colchon_viejo"
-    displayName: "Colchón Viejo Desechado"
-    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000012, type: 3}
+    pedagogicalHint: "¡Aprovechable! Hojas de papel secas y limpias sin restos biológicos. Van en la caneca BLANCA [1]."
+  - itemId: "tetrapak_limpio"
+    displayName: "Envase Tetra Pak Escurrido"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000013, type: 3}
+    correctCategory: 0
+    isTrapItem: 1
+    pedagogicalHint: "¡Buen dato! Aunque combina cartón, plástico y aluminio, en Colombia se recupera limpio y seco en la caneca BLANCA [1]."
+  - itemId: "cascara_banano"
+    displayName: "Cáscara de Banano y Frutas"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000002, type: 3}
     correctCategory: 1
     isTrapItem: 0
-    pedagogicalHint: "¡Pista! Los colchones y residuos voluminosos requieren recolección especial: van en la caneca ROJA [2]." 
+    pedagogicalHint: "¡Orgánico! Materia vegetal biodegradable ideal para compostaje y abono natural en la caneca VERDE [2]."
+  - itemId: "restos_manzana"
+    displayName: "Corazón y Restos de Manzana"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000006, type: 3}
+    correctCategory: 1
+    isTrapItem: 0
+    pedagogicalHint: "¡Orgánico! Desechos de comida cruda que se descomponen y enriquecen la tierra en la caneca VERDE [2]."
+  - itemId: "cascara_naranja"
+    displayName: "Cáscaras de Cítricos y Verduras"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000010, type: 3}
+    correctCategory: 1
+    isTrapItem: 0
+    pedagogicalHint: "¡Orgánico! Biomasa vegetal natural que aporta nutrientes al suelo sin contaminar en la caneca VERDE [2]."
+  - itemId: "hojas_poda"
+    displayName: "Hojas Secas y Poda de Jardín"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000015, type: 3}
+    correctCategory: 1
+    isTrapItem: 0
+    pedagogicalHint: "¡Orgánico! Los restos vegetales de poda y jardinería son base clave para compostaje en la caneca VERDE [2]."
+  - itemId: "bolsita_te"
+    displayName: "Bolsita de Té Usada"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000014, type: 3}
+    correctCategory: 1
+    isTrapItem: 1
+    pedagogicalHint: "¡Buen dato! Las hojas de té y su filtro natural (sin grapa metálica) son compostables en la caneca VERDE [2]."
+  - itemId: "servilleta_usada"
+    displayName: "Servilleta Usada con Grasa"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000007, type: 3}
+    correctCategory: 2
+    isTrapItem: 1
+    pedagogicalHint: "¡Cuidado! Aunque viene del papel, la grasa y fluidos impiden reciclarla. Va en la caneca NEGRA [3]."
+  - itemId: "paquete_engrase"
+    displayName: "Paquete Metalizado de Snacks"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000003, type: 3}
+    correctCategory: 2
+    isTrapItem: 1
+    pedagogicalHint: "¡Ojo! Parece aluminio, pero es plástico metalizado (BOPP) con aceite y sal. Va en la caneca NEGRA [3]."
+  - itemId: "caja_pizza_grasosa"
+    displayName: "Caja de Pizza con Grasa"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000016, type: 3}
+    correctCategory: 2
+    isTrapItem: 1
+    pedagogicalHint: "¡Cuidado! El cartón manchado con queso y aceite contamina el papel limpio. Va en la caneca NEGRA [3]."
+  - itemId: "vaso_cafe_encerado"
+    displayName: "Vaso Encerado de Café"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000017, type: 3}
+    correctCategory: 2
+    isTrapItem: 1
+    pedagogicalHint: "¡Ojo! Parece cartón, pero tiene una película plástica impermeable y manchas de bebida. Va en la caneca NEGRA [3]."
+  - itemId: "recibo_termico"
+    displayName: "Factura / Recibo Térmico"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000018, type: 3}
+    correctCategory: 2
+    isTrapItem: 1
+    pedagogicalHint: "¡Cuidado! El papel térmico de cajeros contiene recubrimiento químico (BPA) no reciclable. Va en la caneca NEGRA [3]."
+  - itemId: "pilas_gastadas"
+    displayName: "Pilas Alcalinas Agotadas"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000019, type: 3}
+    correctCategory: 3
+    isTrapItem: 0
+    pedagogicalHint: "¡Peligroso posconsumo! Contienen metales pesados tóxicos (mercurio, litio, cadmio). Van en la caneca ROJA [4] (Pilas con el Ambiente)."
+  - itemId: "bombillo_ahorrador"
+    displayName: "Bombillo Ahorrador Fundido"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000020, type: 3}
+    correctCategory: 3
+    isTrapItem: 1
+    pedagogicalHint: "¡Peligro! Aunque tiene vidrio, contiene vapor de mercurio tóxico. Requiere entrega en la caneca ROJA [4] (Lúmina)."
+  - itemId: "medicamentos_vencidos"
+    displayName: "Medicamentos Vencidos / Blíster"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000021, type: 3}
+    correctCategory: 3
+    isTrapItem: 0
+    pedagogicalHint: "¡Peligroso posconsumo! Los fármacos contaminan el agua y afectan la fauna del río. Van en la caneca ROJA [4] (Punto Azul)."
+  - itemId: "celular_raee"
+    displayName: "Celular Dañado"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000022, type: 3}
+    correctCategory: 3
+    isTrapItem: 0
+    pedagogicalHint: "¡Residuo electrónico RAEE! Contiene batería y metales tóxicos; requiere recolección especial en la caneca ROJA [4]."
+  - itemId: "aerosol_quimico"
+    displayName: "Aerosol / Insecticida Gastado"
+    itemSprite: {fileID: 21300000, guid: b1000000000000008000000000000023, type: 3}
+    correctCategory: 3
+    isTrapItem: 1
+    pedagogicalHint: "¡Peligro! Aunque su envase es metálico, guarda restos químicos e inflamables a presión. Va en la caneca ROJA [4]." 

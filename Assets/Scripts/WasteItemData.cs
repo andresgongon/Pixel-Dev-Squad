@@ -10,7 +10,7 @@ namespace RioLimpio
         WhiteRecyclable = 0,    // Key 1: Clean plastic, cardboard, paper, glass, and metals
         GreenOrganic = 1,       // Key 2: Biodegradable organic matter and fruit peels
         BlackNonRecyclable = 2, // Key 3: Non-recyclables, dirty napkins, greasy food wrappers
-        RedHazardous = 3        // Key 4: Hazardous and special electronic waste (RAEE) / tires
+        RedHazardous = 3        // Key 4: Hazardous and special posconsumo waste (batteries, bulbs, medicine, small RAEE, aerosols)
     }
 
     // Serializable data model for JSON catalog loading

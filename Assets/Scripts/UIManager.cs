@@ -248,10 +248,10 @@ namespace RioLimpio
                     $"{modeDescription}\n\n" +
                     $"────────────────────────────────────────\n" +
                     $"CÓDIGO DE COLORES (RESOLUCIÓN 2184 DE 2019):\n" +
-                    $"  [1] BLANCA: Aprovechables (botellas limpias, cartón seco, vidrio, latas)\n" +
-                    $"  [2] VERDE:  Orgánicos (cáscaras de fruta, comida cruda, poda)\n" +
-                    $"  [3] NEGRA:  No aprovechables (servilletas, empaques grasosos, vasos encerados)\n" +
-                    $"  [4] ROJA:   Peligrosos y especiales (pilas, medicamentos, bombillos, RAEE)\n" +
+                    $"  [1] BLANCA: Aprovechables (botellas limpias, cartón seco, papel, Tetra Pak, latas)\n" +
+                    $"  [2] VERDE:  Orgánicos (cáscaras de fruta, té, comida cruda, poda)\n" +
+                    $"  [3] NEGRA:  No aprovechables (servilletas, cajas con grasa, vasos encerados, recibos)\n" +
+                    $"  [4] ROJA:   Peligrosos y especiales (pilas, medicamentos, bombillos, RAEE, aerosoles)\n" +
                     $"────────────────────────────────────────\n" +
                     $"CONTROLES: Arrastra o usa teclas [1]-[4]  |  🔊 Tecla [M]: Silenciar audio\n\n" +
                     $"{promptLine}";
@@ -525,10 +525,10 @@ namespace RioLimpio
                     endGameImpactSummaryText.text =
                         $"¡FELICITACIONES, {currentPlayerName.ToUpper()}!\n\n" +
                         $"Has clasificado con éxito los {totalClassified} residuos bajo la Resolución 2184 de 2019:\n\n" +
-                        $"  • [1] BLANCA: Plásticos limpios, cartón seco, vidrio y latas de metal.\n" +
-                        $"  • [2] VERDE:  Cáscaras de frutas, comida cruda y restos de poda para abono.\n" +
-                        $"  • [3] NEGRA:  Servilletas sucias, cartón con grasa y empaques no reciclables.\n" +
-                        $"  • [4] ROJA:   Peligrosos y especiales (medicamentos, bombillos y pilas).\n\n" +
+                        $"  • [1] BLANCA: Plásticos limpios, cartón seco, papel, Tetra Pak y latas.\n" +
+                        $"  • [2] VERDE:  Cáscaras de frutas, té, comida cruda y restos de poda.\n" +
+                        $"  • [3] NEGRA:  Servilletas sucias, cajas con grasa, recibos y vasos encerados.\n" +
+                        $"  • [4] ROJA:   Peligrosos y especiales (pilas, bombillos, medicamentos, RAEE, aerosoles).\n\n" +
                         $"────────────────────────────────────────\n" +
                         $"💧 Impacto ecológico: Has protegido ~{liters:N0} litros de agua en el río.\n" +
                         $"────────────────────────────────────────\n" +
