@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 namespace RioLimpio
@@ -9,22 +10,27 @@ namespace RioLimpio
         [Header("Audio Sources")]
         public AudioSource musicSource;
         public AudioSource sfxSource;
+        private AudioSource comboSource;
 
-        [Header("Audio Clips (To be assigned by Rol 3)")]
+        [Header("Audio Clips")]
         public AudioClip backgroundMusic;
         public AudioClip correctChordClip;
         public AudioClip errorWaterDropClip;
         public AudioClip selectClickClip;
+        public AudioClip timeWarningClip;
+        public AudioClip victoryClip;
 
         [Header("Volume Settings")]
         [Range(0f, 1f)] public float musicVolume = 0.35f;
         [Range(0f, 1f)] public float sfxVolume = 0.85f;
         public bool isMuted = false;
 
-        // Initializes the singleton instance and sets up audio sources on start
+        [Header("Combo Pitch Settings")]
+        public float comboPitchStep = 0.08f;
+        public float maxComboPitch = 1.4f;
+
         private void Awake()
         {
-            // Check if an AudioManager instance already exists to avoid duplicates in the scene
             if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
@@ -35,31 +41,34 @@ namespace RioLimpio
             SetupAudioSources();
         }
 
-        // Starts playing the background music track once the scene loads
         private void Start()
         {
             PlayBackgroundMusic();
         }
 
-        // Configures the AudioSource components if they were not assigned in the Inspector
         private void SetupAudioSources()
         {
             if (musicSource != null)
             {
                 musicSource.loop = true;
                 musicSource.playOnAwake = false;
-                musicSource.volume = musicVolume;
+                musicSource.volume = isMuted ? 0f : musicVolume;
             }
 
             if (sfxSource != null)
             {
                 sfxSource.loop = false;
                 sfxSource.playOnAwake = false;
-                sfxSource.volume = sfxVolume;
+                sfxSource.volume = isMuted ? 0f : sfxVolume;
             }
+
+            // Create an independent source for combo pitch effects.
+            comboSource = gameObject.AddComponent<AudioSource>();
+            comboSource.playOnAwake = false;
+            comboSource.loop = false;
+            comboSource.volume = isMuted ? 0f : sfxVolume;
         }
 
-        // Plays the acoustic background music loop if a clip is assigned
         public void PlayBackgroundMusic()
         {
             if (musicSource != null && backgroundMusic != null && !musicSource.isPlaying)
@@ -70,22 +79,32 @@ namespace RioLimpio
             }
         }
 
-        // Plays the major chord sound effect when the player classifies an item correctly
         public void PlayCorrectSound()
         {
-            if (!isMuted && sfxSource != null && correctChordClip != null)
-            {
-                sfxSource.PlayOneShot(correctChordClip, sfxVolume);
-            }
+            PlayCorrectSound(1);
         }
 
-        // Alias for PlayCorrectSound
+        // Plays the correct sound with progressive pitch based on the current streak.
+        public void PlayCorrectSound(int currentStreak)
+        {
+            if (isMuted || comboSource == null || correctChordClip == null)
+                return;
+
+            float pitch = Mathf.Clamp(
+                1f + Mathf.Max(0, currentStreak - 1) * comboPitchStep,
+                1f,
+                maxComboPitch
+            );
+
+            comboSource.pitch = pitch;
+            comboSource.PlayOneShot(correctChordClip, sfxVolume);
+        }
+
         public void PlaySuccessSound()
         {
             PlayCorrectSound();
         }
 
-        // Plays a soft water drop sound effect when the player selects the wrong bin
         public void PlayErrorSound()
         {
             if (!isMuted && sfxSource != null && errorWaterDropClip != null)
@@ -94,7 +113,6 @@ namespace RioLimpio
             }
         }
 
-        // Plays a short click sound when selecting an item with Click-to-Click mode
         public void PlaySelectSound()
         {
             if (!isMuted && sfxSource != null && selectClickClip != null)
@@ -103,12 +121,28 @@ namespace RioLimpio
             }
         }
 
-        // Adjusts the background music pitch slightly as the river becomes cleaner
+        // Plays a warning sound when less than 25% of the timer remains.
+        public void PlayTimeWarningSound()
+        {
+            if (!isMuted && sfxSource != null && timeWarningClip != null)
+            {
+                sfxSource.PlayOneShot(timeWarningClip, sfxVolume);
+            }
+        }
+
+        // Plays the final victory sound when the player completes the game.
+        public void PlayVictorySound()
+        {
+            if (!isMuted && sfxSource != null && victoryClip != null)
+            {
+                sfxSource.PlayOneShot(victoryClip, sfxVolume);
+            }
+        }
+
         public void UpdateMusicByRiverProgress(float normalizedProgress)
         {
             if (musicSource != null)
             {
-                // Increase music pitch subtly when the river crosses 50% and 100%
                 if (normalizedProgress >= 1f)
                 {
                     musicSource.pitch = 1.05f;
@@ -124,18 +158,18 @@ namespace RioLimpio
             }
         }
 
-        // Toggles audio mute state for accessibility in quiet classroom environments
         public void ToggleMute()
         {
             isMuted = !isMuted;
+
             if (musicSource != null)
-            {
                 musicSource.volume = isMuted ? 0f : musicVolume;
-            }
+
             if (sfxSource != null)
-            {
                 sfxSource.volume = isMuted ? 0f : sfxVolume;
-            }
+
+            if (comboSource != null)
+                comboSource.volume = isMuted ? 0f : sfxVolume;
         }
     }
 }

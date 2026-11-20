@@ -584,7 +584,7 @@ namespace RioLimpio
 
             if (AudioManager.Instance != null)
             {
-                AudioManager.Instance.PlayCorrectSound();
+                AudioManager.Instance.PlayCorrectSound(currentStreak);
                 float ratio = (float)currentClassifiedCount / totalWasteTarget;
                 AudioManager.Instance.UpdateMusicByRiverProgress(ratio);
             }
@@ -796,6 +796,11 @@ namespace RioLimpio
             isGameActive = false;
             isSessionEnded = true;
             lastVictory = victory;
+            // Play the final victory sound when all waste items are classified.
+if (victory && AudioManager.Instance != null)
+{
+    AudioManager.Instance.PlayVictorySound();
+}
 
             if (inspectionMachine != null)
             {
