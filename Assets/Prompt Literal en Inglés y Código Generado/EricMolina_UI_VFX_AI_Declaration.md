@@ -1,14 +1,14 @@
-# AI Usage Declaration – Stage 4 (UI, Popup VFX & Audio Accessibility)
+# AI Usage Declaration – Stage 4 (UI Aesthetics, Colors & Popup VFX)
 
 * **Student:** Eric Daniel Molina Martinez (`EricMolina92`)
-* **Role:** UI/UX Art, Visual Feedback (Popup VFX) & Audio Integration
+* **Role:** UI/UX Aesthetics, Color Contrast (WCAG 2.2) & Popup VFX
 * **AI Tool & Version:** Google Gemini (November 2026)
 
 ---
 
 ## 1. Literal Prompt Used
 
-> "Generate a clean Unity C# script in English for a floating popup VFX triggered upon waste collection in a 2D river cleanup game. It should move upward smoothly and fade out using a coroutine, supporting WCAG 2.2 accessibility with high-contrast text and redundant audio feedback hooks, with clear comments in English."
+> "Generate a clean Unity C# script in English for a floating popup VFX triggered upon waste collection in a 2D river cleanup game. It should move upward smoothly and fade out using a coroutine, supporting WCAG 2.2 accessibility with high-contrast text and clear comments in English."
 
 ---
 
@@ -21,7 +21,7 @@ using TMPro;
 
 /// <summary>
 /// Controls floating visual feedback popups when collecting or sorting river waste.
-/// Supports WCAG 2.2 accessibility through high-contrast visual cues paired with audio feedback.
+/// Supports WCAG 2.2 accessibility through high-contrast visual cues.
 /// </summary>
 public class WastePopupVFX : MonoBehaviour
 {
