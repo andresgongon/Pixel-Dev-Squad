@@ -128,7 +128,7 @@ namespace RioLimpio
             }
         }
 
-        // Spawns an animated floating score popup VFX above the bin or waste item
+        // Spawns an animated floating score popup VFX using WastePopupVFX component
         public void ShowFloatingScoreVFX(string message, bool isPositive, Vector2 startAnchoredPosition)
         {
             if (cachedCanvas == null)
@@ -152,49 +152,27 @@ namespace RioLimpio
             txt.fontStyle = FontStyle.Bold;
             txt.alignment = TextAnchor.MiddleCenter;
             txt.raycastTarget = false;
-            txt.text = message;
-            txt.color = isPositive ? new Color(1f, 0.9f, 0.25f, 1f) : new Color(1f, 0.28f, 0.22f, 1f);
+
+            Color highContrastColor = isPositive
+                ? new Color(1f, 0.9f, 0.25f, 1f)
+                : new Color(1f, 0.28f, 0.22f, 1f);
 
             Outline outline = popupObj.AddComponent<Outline>();
             outline.effectColor = new Color(0.05f, 0.05f, 0.05f, 0.95f);
             outline.effectDistance = new Vector2(2f, -2f);
 
-            StartCoroutine(AnimateFloatingPopupRoutine(rect, txt, startAnchoredPosition));
-        }
+            CanvasGroup group = popupObj.AddComponent<CanvasGroup>();
+            group.blocksRaycasts = false;
+            group.interactable = false;
 
-        private IEnumerator AnimateFloatingPopupRoutine(RectTransform rect, Text txt, Vector2 startPos)
-        {
-            float duration = 0.9f;
-            float elapsed = 0f;
-            Color baseColor = txt.color;
-
-            while (elapsed < duration)
-            {
-                elapsed += Time.deltaTime;
-                float t = Mathf.Clamp01(elapsed / duration);
-
-                // Smooth upward drift + elastic punch at start
-                float yOffset = Mathf.Sin(t * Mathf.PI * 0.5f) * 85f;
-                rect.anchoredPosition = startPos + new Vector2(0f, yOffset);
-
-                float punch = t < 0.2f ? Mathf.Lerp(0.6f, 1.25f, t / 0.2f) : Mathf.Lerp(1.25f, 1.0f, (t - 0.2f) / 0.8f);
-                rect.localScale = new Vector3(punch, punch, 1f);
-
-                float alpha = t > 0.6f ? Mathf.Lerp(1f, 0f, (t - 0.6f) / 0.4f) : 1f;
-                txt.color = new Color(baseColor.r, baseColor.g, baseColor.b, alpha);
-
-                yield return null;
-            }
-
-            if (rect != null)
-            {
-                Destroy(rect.gameObject);
-            }
+            WastePopupVFX popupVfx = popupObj.AddComponent<WastePopupVFX>();
+            popupVfx.ShowLegacyPopup(txt, group, message, highContrastColor, startAnchoredPosition);
         }
 
         // Displays the starting mission intro and instructions modal
         public void ShowStartMissionPanel(string playerName, bool isTimeAttackMode = false, bool showNameError = false)
         {
+            StopAllCoroutines();
             if (feedbackBubbleObject != null)
             {
                 feedbackBubbleObject.SetActive(false);
@@ -253,7 +231,7 @@ namespace RioLimpio
                     $"  [3] NEGRA:  No aprovechables (servilletas, cajas con grasa, vasos encerados, recibos)\n" +
                     $"  [4] ROJA:   Peligrosos y especiales (pilas, medicamentos, bombillos, RAEE, aerosoles)\n" +
                     $"────────────────────────────────────────\n" +
-                    $"CONTROLES: Arrastra o usa teclas [1]-[4]  |  🔊 Tecla [M]: Silenciar audio\n\n" +
+                    $"CONTROLES: Arrastra o teclas [1]-[4]  |  🔊 [M]: Audio  |  [ESC]: Menú\n\n" +
                     $"{promptLine}";
             }
         }
@@ -532,11 +510,12 @@ namespace RioLimpio
                         $"────────────────────────────────────────\n" +
                         $"💧 Impacto ecológico: Has protegido ~{liters:N0} litros de agua en el río.\n" +
                         $"────────────────────────────────────────\n" +
-                        $"¿Quieres retar tu velocidad? Presiona [TAB] para jugar en MODO RETO o [R] para repetir.";
+                        $"Presiona [R] para repetir  |  [TAB] para MODO RETO  |  [ESC] Menú Principal";
                 }
                 else
                 {
                     // Reto Arcade Mode: full competitive Hall of Fame
+                    int targetTotal = GameManager.Instance != null ? GameManager.Instance.totalWasteTarget : 20;
                     string lbStr = "";
                     for (int i = 0; i < topEntries.Count && i < 3; i++)
                     {
@@ -561,8 +540,8 @@ namespace RioLimpio
                         $"────────────────────────────────────────\n" +
                         namePrompt +
                         $"────────────────────────────────────────\n" +
-                        $"• Residuos separados en fuente: {totalClassified} de 12  |  Agua protegida: ~{liters:N0} L\n\n" +
-                        $"Presiona [R] para reiniciar el nivel.";
+                        $"• Residuos separados en fuente: {totalClassified} de {targetTotal}  |  Agua protegida: ~{liters:N0} L\n\n" +
+                        $"Presiona [R] para repetir  |  [TAB] para MODO LIBRE  |  [ESC] Menú Principal";
                 }
             }
         }

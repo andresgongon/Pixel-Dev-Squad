@@ -124,6 +124,12 @@ namespace RioLimpio
                     return;
                 }
 
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    ReturnToStartScreen();
+                    return;
+                }
+
                 if (Input.GetKeyDown(KeyCode.Tab))
                 {
                     isTimeAttackMode = !isTimeAttackMode;
@@ -139,6 +145,13 @@ namespace RioLimpio
                 {
                     StartNewGame();
                 }
+                return;
+            }
+
+            // Return to main menu anytime during gameplay
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                ReturnToStartScreen();
                 return;
             }
 
@@ -382,6 +395,36 @@ namespace RioLimpio
             shufflePointer = 0;
         }
 
+        // Returns cleanly to the Start Mission menu to change mode or player name
+        public void ReturnToStartScreen()
+        {
+            isGameActive = false;
+            isSessionEnded = false;
+            isEditingName = false;
+            isWaitingAtStartScreen = true;
+
+            if (inspectionMachine != null)
+            {
+                inspectionMachine.StopTimer();
+            }
+            if (activeWasteItem != null)
+            {
+                activeWasteItem.gameObject.SetActive(false);
+            }
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlaySelectSound();
+            }
+            if (uiManager != null)
+            {
+                if (uiManager.endGamePanel != null)
+                {
+                    uiManager.endGamePanel.SetActive(false);
+                }
+                uiManager.ShowStartMissionPanel(currentPlayerName, isTimeAttackMode, false);
+            }
+        }
+
         // Starts a fresh game session
         public void StartNewGame()
         {
@@ -584,7 +627,11 @@ namespace RioLimpio
 
             if (AudioManager.Instance != null)
             {
-                AudioManager.Instance.PlayCorrectSound(currentStreak);
+                bool isFinalItem = currentClassifiedCount >= totalWasteTarget;
+                if (!isFinalItem)
+                {
+                    AudioManager.Instance.PlayCorrectSound(currentStreak);
+                }
                 float ratio = (float)currentClassifiedCount / totalWasteTarget;
                 AudioManager.Instance.UpdateMusicByRiverProgress(ratio);
             }
@@ -797,10 +844,10 @@ namespace RioLimpio
             isSessionEnded = true;
             lastVictory = victory;
             // Play the final victory sound when all waste items are classified.
-if (victory && AudioManager.Instance != null)
-{
-    AudioManager.Instance.PlayVictorySound();
-}
+            if (victory && AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayVictorySound();
+            }
 
             if (inspectionMachine != null)
             {

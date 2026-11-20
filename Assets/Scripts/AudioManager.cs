@@ -126,7 +126,7 @@ namespace RioLimpio
         {
             if (!isMuted && sfxSource != null && timeWarningClip != null)
             {
-                sfxSource.PlayOneShot(timeWarningClip, sfxVolume);
+                sfxSource.PlayOneShot(timeWarningClip, Mathf.Clamp(sfxVolume * 1.5f, 0.5f, 1.5f));
             }
         }
 
@@ -135,7 +135,7 @@ namespace RioLimpio
         {
             if (!isMuted && sfxSource != null && victoryClip != null)
             {
-                sfxSource.PlayOneShot(victoryClip, sfxVolume);
+                sfxSource.PlayOneShot(victoryClip, Mathf.Clamp(sfxVolume * 1.5f, 0.5f, 1.5f));
             }
         }
 

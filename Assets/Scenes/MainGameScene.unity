@@ -529,7 +529,7 @@ MonoBehaviour:
   victoryClip: {fileID: 8300000, guid: 96aabaabd4e1f864881427baf606e23c, type: 3}
   musicVolume: 0.35
   sfxVolume: 0.85
-  isMuted: 1
+  isMuted: 0
   comboPitchStep: 0.08
   maxComboPitch: 1.4
 --- !u!1 &400
